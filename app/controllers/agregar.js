@@ -61,7 +61,6 @@ module.exports.getAgregar = (req, res) => {
 
 };
 
-
 router.post('/agregar', upload.single('imagen'), (req,res)=>{
 
 const nuevoRegistro = new Cervezas({
