@@ -70,8 +70,6 @@ const upload = multer ({ storage : storage }) ;
 
 // ****** RUTAS ********** //
 
-
-
 const controladorUsuario =  require('./app/controllers/user');
 app.get('/signup', controladorUsuario.postSignUp);
 app.get('/login', controladorUsuario.postLogin);
@@ -100,7 +98,6 @@ app.get('/eventos', PassportConfig.estaAutenticado, controladorEventos.getEvento
 //ControladorComunidad
 const controladorComunidad=  require('./app/controllers/comunidad');
 app.get('/comunidad', PassportConfig.estaAutenticado, controladorComunidad.getComunidad);
-
 
 //ControladorPerfil
 const controladorPerfil =  require('./app/controllers/perfil');

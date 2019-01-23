@@ -3,8 +3,6 @@ const  session = require('express-session');
 const  Lugares = require('../models/lugares');
 const   router = express.Router();
 
-const  controladorLugares = require('./lugares');
-
 
 module.exports = function (app) {
     app.use('/', router);
@@ -23,25 +21,25 @@ module.exports.getLugares =  (req, res, next) => {
 
 module.exports.getDetalleDelLugar =  (req, res, next) => {
 
-    const lugarId = req.params.id;
-
-    getInformacionLugar(lugarId)
+    const lugarItem = req.params.item;
+    
+ 
+    getInformacionLugar(lugarItem)
     .then((lugares) => {
-      res.render('lugar', {
+      res.render('lugares', {
         lugares,
-        tituloPrincipal: 'Bienvenido a Lúpulos',
-        lugarId: req.param.id 
-
-     
+        titulo: req.params.item 
       })
     })
- 
+
+
+    
+
 };
 
-
-const getInformacionLugar = (lugarId) => {
+const getInformacionLugar = (lugarItem) => {
     return Promise.all([
-         Lugares.find({_id: lugarId}),
+         Lugares.findOne({_id: lugarItem}),
 
     ]);
 }

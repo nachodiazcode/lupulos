@@ -8,7 +8,7 @@ block content
 		h5.title #{lugares._id}
 		br
 		.row
-			.col.l8.offset-l2
+			.col.l8.col.offset-l2
 				if lugares
 					each lugar in lugares
 						a(href=`/lugar/${lugar._id}`)
@@ -21,6 +21,4 @@ block content
 									p.title #{lugar.direccion}
 
 
-
-		
 
