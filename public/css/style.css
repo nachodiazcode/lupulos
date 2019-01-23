@@ -17,7 +17,6 @@ body{
 main {
   flex: 1 0 auto;
 }
-   
 
 p{
   font-size: 16px;
@@ -73,7 +72,6 @@ footer h5 {
 
 footer a{
   color: #ffe089 !important;
-
 }
 
 .text-input{
@@ -96,8 +94,6 @@ background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, F
 .title{
   color:#ffe089 !important;
 }
-
-
 
 .text-footer{
   color:#ffe089 !important;
@@ -133,8 +129,6 @@ i.left {
 .imagen{
   width:100% !important;
   height:300px ;
-
-
 }
 
 .parrafo1{
@@ -170,7 +164,6 @@ i.left {
 
 .formulario-card{
   padding: 3% !important;
-
 }
 
 .formulario-card .card {
@@ -189,7 +182,6 @@ i.left {
   margin-left:10px ;
 }
 
-
 button{
   background: none !important;
   border-style: none !important;
@@ -202,20 +194,17 @@ button{
 
 }
 
-
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
   }
 }
 
-
 .input-field input[type=search] {
   display: block;
   line-height: inherit;
   position: relative;
   height: 63px !important;
-
 }
 
 .search-input{
@@ -224,6 +213,7 @@ button{
   left:200px;
 
 }
+
 .cardview{
   margin-left:30px !important;
 }
@@ -231,10 +221,8 @@ button{
 .userdate{
   position: relative;
   padding-left: 8%;
-
   font-weight: 500 ;
   font-size: 2rem ;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -292,31 +280,25 @@ button{
 
 .beer-cards p{
   white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 75ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
 }
 
 #dropdown1{
-
-
   color: #fff !important ;
   background: #232526;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
 }
 
 #dropdown1 li>a{
- 
   color: #ffe089 !important ;
 }
 
 nav ul  a {
   color:#ffe089 !important ;
 }
-
-
 
 input {
   border-bottom: 1px solid #ffe089 !important;
