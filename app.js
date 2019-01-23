@@ -56,6 +56,20 @@ app.use((req,res,next)=>{
   next();
 })
 
+//utilizamos multer para subir imágenes 
+const storage = multer.diskStorage({
+	destination: function(req,file,next) {
+		next(null, './public/');
+	},
+
+	filename: function(req, file, next) {
+		next(null, file.originalname);
+	}
+
+});
+
+const upload = multer ({ storage : storage }) ;
+
 // ****** RUTAS ********** //
 
 const controladorUsuario =  require('./app/controllers/user');
@@ -83,6 +97,9 @@ app.get('/eventos',  PassportConfig.estaAutenticado, controladorEventos.getEvent
 const controladorComunidad=  require('./app/controllers/comunidad');
 app.get('/comunidad',  PassportConfig.estaAutenticado, controladorComunidad.getComunidad);
 
+const controladorAgregar = require('./app/controllers/agregar');
+app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
+
 
 //ControladorPerfil
 const controladorPerfil =  require('./app/controllers/perfil');
@@ -94,8 +111,6 @@ app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseg
 //ControladorExplorar : Donde explorar a los distintos usuarios
 const controladorExplorar=  require('./app/controllers/explorar');
 app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar);
-app.get('/explorar/:item',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar);
-
 app.post('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.postExplorar);
 
 

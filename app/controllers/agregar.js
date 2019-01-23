@@ -61,18 +61,18 @@ module.exports.getAgregar = (req, res) => {
 
 };
 
-router.post('/agregar', upload.single('imagen'), (req,res)=>{
+module.exports.postAgregar = (req,res) => {
+	
+	const nuevoRegistro = new Cervezas({
+		title:req.body.title,
+		descripcion:req.body.descripcion,
+		imagen:req.file.filename,
+		comentarios:req.body.comentarios,
+		usuario:req.user._id,
+		username: req.user.username
+	});
 
-const nuevoRegistro = new Cervezas({
-	title:req.body.title,
-	descripcion:req.body.descripcion,
-	imagen:req.file.filename,
-	comentarios:req.body.comentarios,
-	usuario:req.user._id,
-	username: req.user.username
-});
+	nuevoRegistro.save();
+	res.redirect('/inicio');
 
-nuevoRegistro.save();
-res.redirect('/inicio');
-
-});
+}
