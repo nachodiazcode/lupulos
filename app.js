@@ -70,10 +70,16 @@ const upload = multer ({ storage : storage }) ;
 
 // ****** RUTAS ********** //
 
+
+
 const controladorUsuario =  require('./app/controllers/user');
 app.get('/signup', controladorUsuario.postSignUp);
 app.get('/login', controladorUsuario.postLogin);
 app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
+
+//Agragamos las cervezas !!!!!
+const controladorAgregar = require('./app/controllers/agregar');
+app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
 const controladorIndex =  require('./app/controllers/index');
 app.get('/index',  controladorIndex.getIndex);
@@ -85,18 +91,16 @@ app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio);
 //ControladorLugares
 const controladorLugares =  require('./app/controllers/lugares');
 app.get('/lugares',  PassportConfig.estaAutenticado, controladorLugares.getLugares);
-app.get('/lugar/:item',  PassportConfig.estaAutenticado, controladorLugares.getDetalleDelLugar);
+app.get('/lugar/:item', PassportConfig.estaAutenticado, controladorLugares.getDetalleDelLugar);
 
 //ControladorEventos
 const controladorEventos =  require('./app/controllers/eventos');
-app.get('/eventos',  PassportConfig.estaAutenticado, controladorEventos.getEventos);
+app.get('/eventos', PassportConfig.estaAutenticado, controladorEventos.getEventos);
 
 //ControladorComunidad
 const controladorComunidad=  require('./app/controllers/comunidad');
-app.get('/comunidad',  PassportConfig.estaAutenticado, controladorComunidad.getComunidad);
+app.get('/comunidad', PassportConfig.estaAutenticado, controladorComunidad.getComunidad);
 
-const controladorAgregar = require('./app/controllers/agregar');
-app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
 //ControladorPerfil
 const controladorPerfil =  require('./app/controllers/perfil');
