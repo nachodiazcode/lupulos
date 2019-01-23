@@ -85,6 +85,7 @@ app.get('/index',  controladorIndex.getIndex);
 //ControladorInicio
 const controladorInicio =  require('./app/controllers/inicio');
 app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio);
+app.get('/cerveza/:item', controladorInicio.getDetallesCervezas);
 
 //ControladorLugares
 const controladorLugares =  require('./app/controllers/lugares');

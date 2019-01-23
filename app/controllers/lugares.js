@@ -22,18 +22,14 @@ module.exports.getLugares =  (req, res, next) => {
 module.exports.getDetalleDelLugar =  (req, res, next) => {
 
     const lugarItem = req.params.item;
-    
- 
+
     getInformacionLugar(lugarItem)
     .then((lugares) => {
-      res.render('lugares', {
+      res.render('lugar', {
         lugares,
         titulo: req.params.item 
       })
     })
-
-
-    
 
 };
 

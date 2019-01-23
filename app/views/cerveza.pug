@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    
+     if cervezas
+          each cerveza in cervezas
+               h3.title #{cerveza.title}
+               p.title #{cerveza.comentarios}
+               img(src=`${cerveza.imagen}` class="imagen")
+
+
+
+
