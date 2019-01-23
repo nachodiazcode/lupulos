@@ -1,8 +1,9 @@
 const  express = require('express');
 const  session = require('express-session');
 const  Lugares = require('../models/lugares');
-const controladorLugares = require('./lugares');
 const   router = express.Router();
+
+const  controladorLugares = require('./lugares');
 
 
 module.exports = function (app) {
@@ -35,8 +36,9 @@ module.exports.getDetalleDelLugar =  (req, res, next) => {
       })
     })
  
-
 };
+
+
 const getInformacionLugar = (lugarId) => {
     return Promise.all([
          Lugares.find({_id: lugarId}),
