@@ -1,0 +1,91 @@
+doctype html
+html(lang = "es")
+
+  head
+    title=tituloPrincipal
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    link(href='css/style.css', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Libre+Baskerville', rel='stylesheet')
+
+body
+
+  .col.offset-l4
+    .navbar-fixed
+      nav.nav-index
+    
+        a(href="#!" class="brand-logo logo") LUPULOS
+          i(class="material-icons icono-logo") local_drink
+    
+        ul(class="right hide-on-med-and-down")
+              li
+                a(onclick="mostrar_ocultar()")  Registrarse
+                  i(class="material-icons left") assignment_ind
+
+  .row
+
+      header.col.l12
+        .container
+            h2.title LÚPULOS
+            h5.title.center La nueva aplicación para los amantes de la cerveza artesanal
+               .row
+    
+                form(action="/login" method="post" id="formulario")
+
+                  .login(class="card grey darken-3 col m5 l12 col offset-m2 left z-depth-4")
+                    .input-field
+                      input(type="email", name="email", class=" ")
+                      label Correo
+                    .input-field
+                      input(type="password", name="password", class="")
+                      label Contraseña
+                      button( type="submit" class="button btn btn-success grey darken-4 login-button ") LOGIN
+
+                .row
+
+                form(action="/signup" method="post"  id="formulario2")
+                  .login(class="card grey darken-3 col m4 l12 left ")
+                    .input-field
+                      input(type="email", name="email", class="form-control")
+                      label Correo
+                    .input-field
+                      input(type="text", name="username", class="form-control")
+                      label Nombre de usuario
+                    .input-field
+                      input(type="text", name="biografia", class="form-control")
+                      label Cuenta un poco acerca de ti
+                    .input-field
+                      input(type="password", name="password", class="form-control")
+                      label Contraseña
+                      button( type="submit" class="button btn btn-success grey darken-4 login-button") CREAR UNA CUENTA
+
+// JavaScript !!!!
+script.
+  window.onload = function ocultar_registro(){
+    var formulario2 = document.getElementById("formulario2");
+    formulario2.style.display = "none" ;
+  }
+
+  function mostrar(){
+    document.getElementById("formulario2").style.display = "block" ;
+    document.getElementById("formulario").style.display = "none" ;
+  }
+
+  function ocultar(){
+    document.getElementById("formulario").style.display = "block" ;
+    document.getElementById("formulario2").style.display = "none" ;
+  }
+
+  function mostrar_ocultar(){
+
+    if(formulario2.style.display == "none"){
+        mostrar();
+    } else {
+      ocultar();
+    }
+
+  }

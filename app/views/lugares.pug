@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+	.container
+		br
+		h4.title.center Siempre habrá un buen lugar, para descubrir tu nueva cerveza, en invierno o en verano
+		h5.title #{lugares._id}
+		br
+		.row
+			.col.l8.offset-l2
+				if lugares
+					each lugar in lugares
+						a(href=`/lugar/${lugar._id}`)
+							.card.grey.darken-4
+								.card-image
+									img(src=`${lugar.imagen}`)
+									h2.card-title #{lugar.nombre}
+
+								.card-content
+									p.title #{lugar.direccion}
+
+
+
+		
+

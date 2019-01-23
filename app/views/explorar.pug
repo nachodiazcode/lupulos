@@ -1,0 +1,34 @@
+extends layout
+block content
+
+	.row
+		.container
+
+			h3.title Busca a cerveceros que quieras seguir, para ver sus cervezas favoritas
+			p  Descubre nuevas personas con las que puedas descubrir, un nuevo sabor
+
+
+			form(role='form', method='post')
+				input.form-control(name='query', type='search', value='', placeholder='Busca a gente que seguir!')
+
+
+				each user in users
+					.card.horizontal.grey.darken-4
+						a(href=`/perfil/${user._id}`)
+							.card-image
+								img(src=`${user.avatar(250)}`)   
+							.card-content
+								a(href=`/perfil/${user._id}`)
+									span.card-title #{user.username}
+								p.title #{user.biografia}
+
+
+
+
+
+
+
+
+
+
+

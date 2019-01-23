@@ -1,0 +1,48 @@
+extends layout
+
+block content
+ c
+  .row
+
+      h2.center-align.title.left Datos de Perfil
+
+  .row
+      .col.s12.m8.offset-m2.l4
+        .card-panel.grey.lighten-5.z-depth-1
+          .row.valign-wrapper
+            .col.s5
+              img.circle.responsive-img(src=`${usuario.avatar(900)}`)
+
+            .col.s10
+              span.black-text
+                | #{usuario.username}
+            .col.s10
+              span.black-text
+                | #{usuario.biografia}
+
+      .col.s12.m8.offset-m2.l8
+        .card-panel.grey.lighten-5.z-depth-1
+
+          .row.valign-wrapper
+            .col.s3
+              span.black-text
+                | Seguidores 
+                br
+                | #{usuario.seguidores.length}
+              // notice the "circle" class
+            .col.s10
+                
+              span.black-text
+                |  Siguiendo
+                br
+                |  #{usuario.siguiendo.length}
+
+          if !esconderBotones
+           if !estaSiendoSeguido
+            .grey.lighten-5.z-depth-1
+              a(href=`/seguir/${usuario._id}` class=' button btn å right blue') SEGUIR
+           else
+            .grey.lighten-5.z-depth-1
+              a(href=`/unseguir/${usuario._id}` class=' button btn å right red') DEJAR DE SEGUIR
+      
+

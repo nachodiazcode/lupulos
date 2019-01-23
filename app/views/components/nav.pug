@@ -1,0 +1,49 @@
+.col.offset-l4
+  .navbar-fixed
+     nav
+      a(href="#!" class="brand-logo logo") LUPULOS
+        i(class="material-icons icono-logo") local_drink
+        
+      ul(class="right hide-on-med-and-down")
+         if user
+            li
+              a(href="/explorar")  Buscar Cerveceros
+                i(class="material-icons left") search
+            
+            li
+              a(href="/inicio")  Subir
+                i(class="material-icons left") file_upload
+
+            li
+              a(href="/lugares")    Lugares
+                i(class="material-icons left") location_on
+            li
+              a(href="/comunidad")  Comunidad
+                i(class="material-icons left") people
+            li
+              a(href="#" class="dropdown-button"    data-activates="dropdown1" data-target='dropdown1')   #{user.username}
+                  img.circle.responsive-img.profile-img(src=`${user.avatar(20)}`)
+
+            ul#dropdown1.dropdown-content
+                li
+                  a(href='/prensa') Prensa
+                    i.material-icons local_parking
+                li
+                  a(href='/blog') Blog
+                    i.material-icons format_align_left
+
+                li.divider(tabindex='-1')
+
+                li
+                  a(href='/privacidad') Privacidad 
+                    i.material-icons security
+                li
+                  a(href='/mi/perfil')
+                    i.material-icons account_circle
+                    | Mi cuenta
+                li
+                  a(href='/logout')
+                    i.material-icons exit_to_app
+                    | Cerrar Sesión
+
+         else 
