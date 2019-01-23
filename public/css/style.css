@@ -21,7 +21,6 @@ p{
 h1{
   font-family: 'Libre Baskerville', serif;
   font-size:4rem;
-
 }
 
 h2{
@@ -48,14 +47,6 @@ footer{
   background: linear-gradient(to right, #2b2c2e, #090a0a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.footer-copyright{
-  background: #01060877;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #121416, #171d1f);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #171a1f, #151a1b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color:#ffe089 !important ;
-  padding: 1% !important ;
-}
-
 footer p{
   color: #ffe089 !important;
 }
@@ -67,6 +58,23 @@ footer h5 {
 footer a{
   color: #ffe089 !important;
 }
+
+nav ul  a {
+  color:#ffe089 !important ;
+}
+
+input {
+  border-bottom: 1px solid #ffe089 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ffe089 !important;
+  box-shadow: 0 1px 0 0 #ffe089 !important;
+  color:#fff !important ;
+}
+
+label{
+  color:#fff !important ;
+}
+
+
 
 .text-input{
   color:#ffe089 !important 
@@ -176,11 +184,6 @@ i.left {
   margin-left:10px ;
 }
 
-button{
-  background: none !important;
-  border-style: none !important;
-}
-
 .button-register {
   font-size:18px;
   position:relative;
@@ -278,32 +281,6 @@ button{
   max-width: 75ch;
 }
 
-#dropdown1{
-  color: #fff !important ;
-  background: #232526;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-#dropdown1 li>a{
-  color: #ffe089 !important ;
-}
-
-nav ul  a {
-  color:#ffe089 !important ;
-}
-
-input {
-  border-bottom: 1px solid #ffe089 !important;
-  -webkit-box-shadow: 0 1px 0 0 #ffe089 !important;
-  box-shadow: 0 1px 0 0 #ffe089 !important;
-  color:#fff !important ;
-}
-
-label{
-  color:#fff !important ;
-}
-
 .comment-text{
   color:#ffe089 !important ;
 }
@@ -317,3 +294,23 @@ label{
 .card-lugares .card{
   margin-top:2%;
 }
+
+.footer-copyright{
+  background: #01060877;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #121416, #171d1f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #171a1f, #151a1b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color:#ffe089 !important ;
+  padding: 1% !important ;
+}
+
+#dropdown1{
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff !important ;
+}
+
+#dropdown1 li>a{
+  color: #ffe089 !important ;
+}
+

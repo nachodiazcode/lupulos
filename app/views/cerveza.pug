@@ -1,13 +1,25 @@
 extends layout
 
 block content
-    
-     if cervezas
-          each cerveza in cervezas
-               h3.title #{cerveza.title}
-               p.title #{cerveza.comentarios}
-               img(src=`${cerveza.imagen}` class="imagen")
+     .row
+          if cervezas
+               each cerveza in cervezas
+                
+                    h4.title.center #{cerveza.title}                    
+                    .row
+                         .col.l7
 
+                              a(href=`/lugar/${cerveza._id}`)
+                                   .card.grey.darken-4
+                                        .card-image
+                                             img(src=`../../${cerveza.imagen}` class="responsive-img")
+                                             h2.card-title #{cerveza.title}
+
+                                        .card-content
+                                             p.title #{cerveza.comentarios}
+
+                         .col.l5
+                              h4.title Comentar
 
 
 
