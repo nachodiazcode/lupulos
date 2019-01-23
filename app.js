@@ -12,7 +12,6 @@ const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
   
 const app = express();
 
-
 mongoose.Promise = global.Promise;
 mongoose.connect(mongo_url);
 mongoose.connection.on('error', (err) => {
@@ -21,7 +20,6 @@ mongoose.connection.on('error', (err) => {
   process.exit(1);
 
 })
-
 
 mongoose.connect(config.db);
 
@@ -100,7 +98,6 @@ app.get('/comunidad',  PassportConfig.estaAutenticado, controladorComunidad.getC
 const controladorAgregar = require('./app/controllers/agregar');
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
-
 //ControladorPerfil
 const controladorPerfil =  require('./app/controllers/perfil');
 app.get('/mi/perfil',  PassportConfig.estaAutenticado, controladorPerfil.getMiPerfil);
@@ -112,7 +109,6 @@ app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseg
 const controladorExplorar=  require('./app/controllers/explorar');
 app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar);
 app.post('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.postExplorar);
-
 
 require('./config/express')(app, config);
 
