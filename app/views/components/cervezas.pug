@@ -1,15 +1,14 @@
-.container
-  if cervezas
+.row
+  .col.l10.col.offset-l1
+    if cervezas
       each cerveza in cervezas
-        .card.beer-cards.col.l4.m4.s12.z-depth-4.card.grey.darken-3 
-          br
-          a(href=`/perfil/${user._id}` class="userdate  ") #{cerveza.username}
-          p(class="gray-text userdate2") Publicado el : #{cerveza.createdAt.toLocaleString()}
-          a(href=`/cerveza/${cerveza._id}`) 
-           h2( class="title-card grey-text blue-text darken-1 userdate")  #{cerveza.title}  
-          a(ref=`/cerveza/${cerveza._id}`)        
-           img(src=`${cerveza.imagen}` class="imagen card-image ")
-          p(class="comment-text") #{cerveza.comentarios}
+        a(href=`/cerveza/${cerveza.id}`)
+
+          .card.grey.darken-4.beer-cards.col.l4.m4.s12
+            br
+            a(href=`/cerveza/${cerveza._id}`)        
+              img(src=`${cerveza.imagen}` class="imagen card-image ")
+            p(class="comment-text") #{cerveza.comentarios}
 
 //manejo de errores
 if cervezas.length <=0

@@ -3,23 +3,16 @@ extends layout
 block content
      .row
           if cervezas
-               each cerveza in cervezas
-                
-                    h4.title.center #{cerveza.title}                    
-                    .row
-                         .col.l7
+             each cerveza in cervezas
+               .row
+                    .col.l6
+                         a(href=`/lugar/${cerveza._id}`)
+                         br
+                         img(src=`../../${cerveza.imagen}` class="imagen responsive-img")
+                    .col.l5
+                         h2.title.left #{cerveza.title}
+                         p.col.l12 #{cerveza.comentarios}
 
-                              a(href=`/lugar/${cerveza._id}`)
-                                   .card.grey.darken-4
-                                        .card-image
-                                             img(src=`../../${cerveza.imagen}` class="responsive-img")
-                                             h2.card-title #{cerveza.title}
-
-                                        .card-content
-                                             p.title #{cerveza.comentarios}
-
-                         .col.l5
-                              h4.title Comentar
 
 
 
