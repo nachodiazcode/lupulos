@@ -74,6 +74,9 @@ label{
   color:#fff !important ;
 }
 
+.brand-logo{
+  color:#ffe089 !important ;
+}
 
 
 .text-input{
@@ -288,7 +291,7 @@ i.left {
 .profile-img{
   position: relative;
   top:13px ;
-  left:13px ;
+  left:0px ;
 }
 
 .card-lugares .card{

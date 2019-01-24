@@ -1,8 +1,8 @@
 .col.offset-l4
   .navbar-fixed
      nav
-      a(href="#!" class="brand-logo logo") LUPULOS
-        i(class="material-icons icono-logo") local_drink
+      a(href="#!" class="brand-logo logo") LÚPULOS
+      
         
       ul(class="right hide-on-med-and-down")
          if user
@@ -19,7 +19,7 @@
                 i(class="material-icons left") location_on
             
             li
-              a(href="#" class="dropdown-button"    data-activates="dropdown1" data-target='dropdown1')   #{user.username}
+              a(href="#" class="dropdown-button"    data-activates="dropdown1" data-target='dropdown1')   
                   img.circle.profile-img(src=`${user.avatar(20)}`)
 
             ul#dropdown1.dropdown-content
