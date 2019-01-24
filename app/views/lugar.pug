@@ -2,27 +2,22 @@ extends layout
 
 block content
      .row
-       .container
-          if lugares
-               each lugar in lugares
-                    br
-                    h4.title.center #{lugar.nombre}
-                    h5.title #{lugares._id}
-                    br
-                    .row
-                         .col.l7
+          .container
+               if lugares
+                    each lugar in lugares
+                         .row
+                              .col.l6
+                                   a(href=`/lugar/${lugar._id}`)
+                                   br
+                                   img(src=`${lugar.imagen}` class="imagen " width="440" height="300")
+                              .col.l6
+                                   h2.title.left.cerveza-title #{lugar.nombre}
+                                   p.col.l12 #{lugar.direccion}
 
-                              a(href=`/lugar/${lugar._id}`)
-                                   .card.grey.darken-4
-                                        .card-image
-                                             img(src=`${lugar.imagen}` class="responsive-img")
-                                             h2.card-title #{lugar.nombre}
-
-                                        .card-content
-                                             p.title #{lugar.direccion}
-
-                         .col.l5
-                              h4.title Comentar
+                                   form(method='post' class="form-comentario")
+                                     .input-field
+                                        input(type='text', name='title', placeholder='Escribe un comentario')
+                                           
 
 
 
