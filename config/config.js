@@ -8,7 +8,7 @@ var config = {
     app: {
       name: 'lapilsenappfinal'
     },
-    port: 3000,
+    port: 8000,
     db: 'mongodb://localhost/lupulos'
   },
 
@@ -17,7 +17,7 @@ var config = {
     app: {
       name: 'lapilsenappfinal'
     },
-    port: 3000,
+    port: 8000,
     db: 'mongodb://localhost/lupulos'
   },
 
@@ -26,7 +26,7 @@ var config = {
     app: {
       name: 'lapilsenappfinal'
     },
-    port: 3000,
+    port: 8000,
     db: 'mongodb://localhost/lupulos'
   }
 };
