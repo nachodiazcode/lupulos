@@ -387,3 +387,31 @@ i.left {
 #dropdown1 li > a {
   color: #ffe089 !important;
 }
+
+/* line 289, public/styles/sass/styles.sass */
+.avatar {
+  position: relative;
+  top: 15px;
+}
+
+/* line 293, public/styles/sass/styles.sass */
+.image-feed {
+  margin-top: 20%;
+  margin-left: 16%;
+}
+
+/* line 297, public/styles/sass/styles.sass */
+.title-card {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50ch;
+  white-space: nowrap;
+}
+
+/* line 303, public/styles/sass/styles.sass */
+.comments {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50ch;
+  white-space: nowrap;
+}

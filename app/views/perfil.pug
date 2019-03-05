@@ -2,41 +2,45 @@
 extends layout
 
 block content
- 
-  .row
+  
+  .row 
 
-      h2.center-align.title.left Datos de Perfil
-
-  .row
-      .col.s12.m8.offset-m2.l4
-        .card-panel.grey.lighten-5.z-depth-1
+      h2.amber-text.text-lighten-2.left Bienvenido #{usuario.username}
+  
+      .col.s12.m6.offset-m2.l6
+        .card-panel.card-profile.grey.darken-4
           .row.valign-wrapper
-            .col.s5
-              img.circle.responsive-img(src=`${usuario.avatar(900)}`)
-
-            .col.s10
-              span.black-text
+            .col.s5.l10
+              img.circle.responsive-img(src=`${usuario.avatar(120)}` class="avatar")
+            .col.s10.l12
+              h4.black-text.amber-text.text-lighten-2 
                 | #{usuario.username}
-            .col.s10
-              span.black-text
+          
+              span.amber-text.text-lighten-2 
                 | #{usuario.biografia}
-
-      .col.s12.m8.offset-m2.l8
-        .card-panel.grey.lighten-5.z-depth-1
+              
+      .col.s12.m6.offset-m2.l6
+        .card-panel.grey.darken-4.z-depth-1
 
           .row.valign-wrapper
             .col.s3
-              span.black-text
+              span.black-text.amber-text.text-lighten-2 
                 | Seguidores 
                 br
                 | #{usuario.seguidores.length}
               // notice the "circle" class
-            .col.s10
-                
-              span.black-text
+            .col.s3
+              span.black-text.amber-text.text-lighten-2 
                 |  Siguiendo
                 br
                 |  #{usuario.siguiendo.length}
+              
+            .col.s10
+                
+              span.black-text.amber-text.text-lighten-2 
+                |  Cervezas
+                br
+                |  #{cervezas.length}
 
           if !esconderBotones
            if !estaSiendoSeguido
@@ -46,13 +50,25 @@ block content
             .grey.lighten-5.z-depth-1
               a(href=`/unseguir/${usuario._id}` class=' button btn å right red') DEJAR DE SEGUIR
 
-  .row 
-     h2.amber.col.l12 Mis Cervezas
-    
   .row
     if cervezas 
       each cerveza in cervezas 
-          p #{cerveza._id}
+
+
+            .card.col.l4.grey.darken-3
+              i.material-icons.right more_vert
+              .card-image.waves-effect.waves-block.waves-ligh
+                a(herf=`/cerveza/${cerveza._id}`)
+                  img(src=`/upload/${cerveza.imagen}` class="img-responsive image-feed ")
+              .card-content
+                  h5.amber-text.text-lighten-2.title-card Has a subido la cerveza  #{cerveza.title}
+                  p(class="comments") #{cerveza.comentarios}
+                    
+               
+                 
+                
+                
+               
  
 
       
