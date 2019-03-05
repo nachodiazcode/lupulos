@@ -8,6 +8,8 @@ const        bodyParser  = require('body-parser');
 const    PassportConfig  = require('./config/passport');
 const          passport  = require('passport');
 const            multer  = require('multer');
+
+
 const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
   
 const app = express();

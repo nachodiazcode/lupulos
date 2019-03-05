@@ -1,10 +1,10 @@
 .row
-  .col.l11.col.offset-l3
+  .col.l12
     if cervezas
       each cerveza in cervezas
         a(href=`/cerveza/${cerveza.id}`)
 
-          .card.grey.darken-4.beer-cards.col.l6.m4.s12
+          .card.grey.darken-4.beer-cards.col.s12.m4.l4
             br
             h5(class="comment-text") #{cerveza.title}
             a(href=`/cerveza/${cerveza._id}`)        
