@@ -1,0 +1,380 @@
+/* line 2, public/styles/sass/styles.sass */
+body {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* line 11, public/styles/sass/styles.sass */
+main {
+  flex: 1 0 auto;
+}
+
+/* line 14, public/styles/sass/styles.sass */
+p {
+  font-size: 16px;
+  color: #f8efa6;
+}
+
+/* line 18, public/styles/sass/styles.sass */
+h1 {
+  font-family: 'Libre Baskerville';
+  font-size: 4rem;
+}
+
+/* line 22, public/styles/sass/styles.sass */
+h2 {
+  text-align: center;
+}
+
+/* line 25, public/styles/sass/styles.sass */
+h3 {
+  font-size: 29px;
+}
+
+/* line 28, public/styles/sass/styles.sass */
+i {
+  font-size: 30px !important;
+}
+
+/* line 31, public/styles/sass/styles.sass */
+nav {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+}
+
+/* line 36, public/styles/sass/styles.sass */
+footer {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #191a1b, #171a1b);
+  background: linear-gradient(to right, #2b2c2e, #090a0a);
+}
+
+/* line 41, public/styles/sass/styles.sass */
+footer p {
+  color: #ffe089 !important;
+}
+
+/* line 44, public/styles/sass/styles.sass */
+footer h5 {
+  color: #ffe089 !important;
+}
+
+/* line 47, public/styles/sass/styles.sass */
+footer a {
+  color: #ffe089 !important;
+}
+
+/* line 50, public/styles/sass/styles.sass */
+nav ul a {
+  color: #ffe089 !important;
+}
+
+/* line 53, public/styles/sass/styles.sass */
+input {
+  border-bottom: 1px solid #ffe089 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ffe089 !important;
+  box-shadow: 0 1px 0 0 #ffe089 !important;
+  color: #fff !important;
+}
+
+/* line 59, public/styles/sass/styles.sass */
+label {
+  color: #fff !important;
+}
+
+/* line 62, public/styles/sass/styles.sass */
+.brand-logo {
+  color: #ffe089 !important;
+}
+
+/* line 66, public/styles/sass/styles.sass */
+.text-input {
+  color: #ffe089 !important;
+}
+
+/* line 69, public/styles/sass/styles.sass */
+.nav-index {
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+}
+
+/* line 73, public/styles/sass/styles.sass */
+.card-register {
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+}
+
+/* line 79, public/styles/sass/styles.sass */
+.title {
+  color: #ffe089 !important;
+}
+
+/* line 82, public/styles/sass/styles.sass */
+.text-footer {
+  color: #ffe089 !important;
+  padding: 10px;
+  font-weight: bold !important;
+}
+
+/* line 88, public/styles/sass/styles.sass */
+i.left {
+  float: left;
+  margin-right: 18px;
+  margin-top: 5px;
+}
+
+/* line 93, public/styles/sass/styles.sass */
+.publish-icon {
+  position: relative;
+  top: 6px  !important;
+}
+
+/* line 97, public/styles/sass/styles.sass */
+.side-nav {
+  background: #fff;
+  top: 64px;
+}
+
+/* line 101, public/styles/sass/styles.sass */
+.menu-horizontal {
+  background: #000 !important;
+}
+
+/* line 104, public/styles/sass/styles.sass */
+.login {
+  padding: 90px !important;
+}
+
+/* line 107, public/styles/sass/styles.sass */
+.imagen {
+  width: 100% !important;
+  height: 300px;
+}
+
+/* line 111, public/styles/sass/styles.sass */
+.parrafo1 {
+  position: relative;
+  margin-top: 50px;
+}
+
+/* line 115, public/styles/sass/styles.sass */
+.parrafo2 {
+  position: relative;
+  margin-top: 10px;
+}
+
+/* line 119, public/styles/sass/styles.sass */
+.boton-adjuntar {
+  margin-top: 2.8%;
+  width: 20%;
+}
+
+/* line 123, public/styles/sass/styles.sass */
+.login-button {
+  width: 100% !important;
+  position: relative;
+  margin-top: 5% !important;
+}
+
+/* line 128, public/styles/sass/styles.sass */
+.boton-publicar {
+  margin-top: 2.8%;
+  width: 100%;
+  line-height: 40%;
+}
+
+/* line 133, public/styles/sass/styles.sass */
+.btn-login {
+  padding: 20px 0px 0px;
+}
+
+/* line 136, public/styles/sass/styles.sass */
+.formulario-card {
+  padding: 3% !important;
+}
+
+/* line 139, public/styles/sass/styles.sass */
+.formulario-card .card {
+  position: relative;
+  top: 0px;
+}
+
+/* line 143, public/styles/sass/styles.sass */
+.form {
+  top: 210px;
+}
+
+/* line 147, public/styles/sass/styles.sass */
+.card-add-beer {
+  position: relative;
+  top: 200px;
+  margin-left: 10px;
+}
+
+/* line 152, public/styles/sass/styles.sass */
+.button-register {
+  font-size: 18px;
+  position: relative;
+  top: 25px;
+}
+
+@media only screen and (max-width: 992px) {
+  /* line 158, public/styles/sass/styles.sass */
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+/* line 161, public/styles/sass/styles.sass */
+.input-field input[type=search] {
+  display: block;
+  line-height: inherit;
+  position: relative;
+  height: 63px !important;
+}
+
+/* line 167, public/styles/sass/styles.sass */
+.search-input {
+  width: 500px !important;
+  position: relative;
+  left: 200px;
+}
+
+/* line 173, public/styles/sass/styles.sass */
+.cardview {
+  margin-left: 30px !important;
+}
+
+/* line 176, public/styles/sass/styles.sass */
+.userdate {
+  position: relative;
+  padding-left: 8%;
+  font-weight: 500;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
+  color: #ffe089 !important;
+}
+
+/* line 187, public/styles/sass/styles.sass */
+.userdate2 {
+  position: relative;
+  padding-left: 8%;
+  color: gray;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* line 194, public/styles/sass/styles.sass */
+.userdate3 {
+  position: relative;
+  padding-left: 8%;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+/* line 202, public/styles/sass/styles.sass */
+.fecha {
+  font-size: 1.2rem;
+  position: relative;
+  left: 18px;
+}
+
+/* line 208, public/styles/sass/styles.sass */
+.text-size {
+  font-weight: bold !important;
+}
+
+/* line 212, public/styles/sass/styles.sass */
+.text-title {
+  text-shadow: 4px 4px 4px #000;
+}
+
+/* line 216, public/styles/sass/styles.sass */
+.text-header h3 {
+  position: relative;
+}
+
+/* line 220, public/styles/sass/styles.sass */
+.text-button {
+  font-size: 1.5rem;
+}
+
+/* line 224, public/styles/sass/styles.sass */
+.cervezasFeed {
+  position: relative;
+  top: 30px;
+}
+
+/* line 229, public/styles/sass/styles.sass */
+.logo {
+  position: relative;
+  left: 40px;
+}
+
+/* line 234, public/styles/sass/styles.sass */
+.beer-cards p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75ch;
+}
+
+/* line 241, public/styles/sass/styles.sass */
+.comment-text {
+  color: #ffe089 !important;
+}
+
+/* line 245, public/styles/sass/styles.sass */
+.profile-img {
+  position: relative;
+  top: 13px;
+  left: 0px;
+}
+
+/* line 251, public/styles/sass/styles.sass */
+.card-lugares .card {
+  margin-top: 2%;
+}
+
+/* line 255, public/styles/sass/styles.sass */
+.footer-copyright {
+  background: #01060877;
+  background: -webkit-linear-gradient(to right, #121416, #171d1f);
+  background: linear-gradient(to right, #171a1f, #151a1b);
+  color: #ffe089 !important;
+  padding: 1% !important;
+}
+
+/* line 263, public/styles/sass/styles.sass */
+.cerveza-title {
+  margin-left: 2%;
+  text-align: left;
+}
+
+/* line 268, public/styles/sass/styles.sass */
+.form-comentario {
+  margin-left: 2%;
+}
+
+/* line 272, public/styles/sass/styles.sass */
+#dropdown1 {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  color: #fff !important;
+}
+
+/* line 279, public/styles/sass/styles.sass */
+#dropdown1 li > a {
+  color: #ffe089 !important;
+}
