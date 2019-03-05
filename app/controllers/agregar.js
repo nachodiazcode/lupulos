@@ -81,3 +81,10 @@ module.exports.postAgregar = (req,res) => {
 	res.redirect('/inicio');
 
 }
+
+module.exports.getCervezasParaUsuarios  = (usuarioIds) => {
+     return Cervezas
+          .find({usuario: {$in: usuarioIds}})
+          .sort({createdAt: -1 })
+          .populate('users');
+}

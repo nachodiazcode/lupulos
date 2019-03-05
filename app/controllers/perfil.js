@@ -51,6 +51,7 @@ module.exports.getPerfil = (req, res) => {
 const getInformacionPerfil = (usuarioId) => {
     return Promise.all([
          Usuario.findOne({_id: usuarioId}),
+         controladorCervezas.getCervezasParaUsuarios([usuarioId])
 
     ]);
 }

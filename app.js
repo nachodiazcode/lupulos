@@ -105,7 +105,7 @@ app.get('/comunidad', PassportConfig.estaAutenticado, controladorComunidad.getCo
 
 //ControladorPerfil
 const controladorPerfil =  require('./app/controllers/perfil');
-app.get('/mi/perfil',  PassportConfig.estaAutenticado, controladorPerfil.getMiPerfil);
+app.get('/mi/perfil',  PassportConfig.estaAutenticado, controladorPerfil.getMiPerfil, controladorInicio.getDetallesCervezas);
 app.get('/perfil/:id', controladorPerfil.getPerfil);
 app.get('/seguir/:id', PassportConfig.estaAutenticado, controladorPerfil.seguir);
 app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseguir);
