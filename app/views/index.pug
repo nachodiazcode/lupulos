@@ -15,16 +15,62 @@ html(lang = "es")
 body
 
   .col.offset-l4
+    
     .navbar-fixed
-      nav.nav-index
-    
-        a(href="#!" class="brand-logo logo") LUPULOS
-          i(class="material-icons icono-logo") local_drink
-    
-        ul(class="right hide-on-med-and-down")
-              li
-                a(onclick="mostrar_ocultar()")  Registrarse
-                  i(class="material-icons left") assignment_ind
+     .conta
+     nav
+      a(href="#!" class="brand-logo logo") LÚPULOS
+     
+      ul(class="right hide-on-med-and-down")
+        if user
+            li
+              a(href="/explorar")  Buscar Cerveceros
+                i(class="material-icons left") search
+            
+            li
+              a(href="/inicio")  Cervezas
+                i(class="material-icons left") file_upload
+
+            li
+              a(href="/lugares")    Lugares
+                i(class="material-icons left") location_on
+            
+            li
+              a(href="#" class="dropdown-button" data-activates="dropdown1" data-target='dropdown1')   
+                  img.circle.profile-img(src=`${user.avatar(20)}`)
+
+            ul#dropdown1.dropdown-content
+                li
+                  a(href='/prensa') Prensa
+                    i.material-icons local_parking
+                li
+                  a(href='/blog') Blog
+                    i.material-icons format_align_left
+
+                li.divider(tabindex='-1')
+
+                li
+                  a(href='/privacidad') Privacidad 
+                    i.material-icons security
+                li
+                  a(href='/mi/perfil')
+                    i.material-icons account_circle
+                    | Mi cuenta
+                li
+                  a(href='/logout')
+                    i.material-icons exit_to_app
+                    | Cerrar Sesión
+        else 
+          nav
+            ul(class="left hide-on-med-and-down")
+                li
+                  a(onclick="mostrar_ocultar()") 
+                    i.material-icons exit_to_app
+                
+
+
+            
+       
 
   .row
 
@@ -39,14 +85,14 @@ body
 
                   .login(class="card grey darken-3 col m5 l12 col offset-m2 left z-depth-4")
                     .input-field
-                      input(type="email", name="email", class=" ")
+                      input(type="text", name="email", class=" ")
                       label Correo
                     
                     .input-field
                       input(type="password", name="password", class="")
                       label Contraseña
                       button( type="submit" class="button btn btn-success grey darken-4 login-button ") LOGIN
-
+                      a( onclick="mostrar_ocultar()" class="button btn btn-success grey darken-4 login-button ") REGISTRARSE
                 .row
 
                 form(action="/signup" method="post"  id="formulario2")
