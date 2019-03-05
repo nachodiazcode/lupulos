@@ -1,3 +1,4 @@
+
 extends layout
 
 block content
@@ -48,8 +49,14 @@ block content
   .row 
      h2.amber.col.l12 Mis Cervezas
     
-  .row 
+  .row
+    if cervezas 
+      each cerveza in cervezas 
+          p #{cerveza._id}
+ 
 
       
+
+
       
 

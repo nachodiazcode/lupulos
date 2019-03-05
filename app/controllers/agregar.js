@@ -7,7 +7,7 @@ const    Usuario  = require('../models/user');
 
 const storage = multer.diskStorage({
 	destination: function(req,file,next) {
-		next(null, './public/');
+		next(null, '../../public/imagenes-subidas/');
 	},
 
 	filename: function(req, file, next) {
@@ -18,16 +18,21 @@ const storage = multer.diskStorage({
 
 const upload = multer ({ storage : storage }) ;
 
+
+
 module.exports = function(app){
 	app.use('/',router);
 };
+
+
+
 
 const multerConf = {
 
 	storage : multer.diskStorage({
 
 		destination : function (req ,file,next){
-			next(null, './public/');
+			next(null, '../../public/imagenes-subidas/');
 		},
 
 		filename : function(req, file, next){
@@ -37,7 +42,7 @@ const multerConf = {
 
 		fileFilter : function (req, file, next) {
 
-			if ( file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg' ) {
+			if ( file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === video/quicktime || file.mimetpye === video/mp4 || file.mimetype === application/x-mpegURL ) {
 
 				next(null, false);
 

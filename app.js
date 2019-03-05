@@ -23,6 +23,7 @@ mongoose.connection.on('error', (err) => {
 
 })
 
+
 mongoose.connect(config.db);
 
 let db = mongoose.connection;
@@ -59,7 +60,7 @@ app.use((req,res,next)=>{
 //utilizamos multer para subir imágenes 
 const storage = multer.diskStorage({
 	destination: function(req,file,next) {
-		next(null, './public/');
+		next(null, './public/upload/');
 	},
 
 	filename: function(req, file, next) {
