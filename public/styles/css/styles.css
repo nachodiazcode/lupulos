@@ -79,6 +79,11 @@ input {
 }
 
 /* line 56, public/styles/sass/styles.sass */
+label {
+  color: #fff !important;
+}
+
+/* line 60, public/styles/sass/styles.sass */
 .materialize-textarea {
   border-bottom: 1px solid #ffe089 !important;
   -webkit-box-shadow: 0 1px 0 0 #ffe089 !important;
@@ -86,143 +91,138 @@ input {
   color: #ffe089 !important;
 }
 
-/* line 62, public/styles/sass/styles.sass */
-label {
-  color: #fff !important;
-}
-
-/* line 65, public/styles/sass/styles.sass */
+/* line 66, public/styles/sass/styles.sass */
 .brand-logo {
   color: #ffe089 !important;
 }
 
-/* line 69, public/styles/sass/styles.sass */
+/* line 70, public/styles/sass/styles.sass */
 .text-input {
   color: #ffe089 !important;
 }
 
-/* line 72, public/styles/sass/styles.sass */
+/* line 73, public/styles/sass/styles.sass */
 .nav-index {
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
 }
 
-/* line 76, public/styles/sass/styles.sass */
+/* line 77, public/styles/sass/styles.sass */
 .card-register {
   background: #000000;
   background: -webkit-linear-gradient(to right, #434343, #000000);
   background: linear-gradient(to right, #434343, #000000);
 }
 
-/* line 82, public/styles/sass/styles.sass */
+/* line 83, public/styles/sass/styles.sass */
 .title {
   color: #ffe089 !important;
 }
 
-/* line 85, public/styles/sass/styles.sass */
+/* line 86, public/styles/sass/styles.sass */
 .text-footer {
   color: #ffe089 !important;
   padding: 10px;
   font-weight: bold !important;
 }
 
-/* line 91, public/styles/sass/styles.sass */
+/* line 92, public/styles/sass/styles.sass */
 i.left {
   float: left;
   margin-right: 18px;
   margin-top: 5px;
 }
 
-/* line 96, public/styles/sass/styles.sass */
+/* line 97, public/styles/sass/styles.sass */
 .publish-icon {
   position: relative;
   top: 6px  !important;
 }
 
-/* line 100, public/styles/sass/styles.sass */
+/* line 101, public/styles/sass/styles.sass */
 .side-nav {
   background: #fff;
   top: 64px;
 }
 
-/* line 104, public/styles/sass/styles.sass */
+/* line 105, public/styles/sass/styles.sass */
 .menu-horizontal {
   background: #000 !important;
 }
 
-/* line 107, public/styles/sass/styles.sass */
+/* line 108, public/styles/sass/styles.sass */
 .login {
   padding: 90px !important;
 }
 
-/* line 110, public/styles/sass/styles.sass */
+/* line 111, public/styles/sass/styles.sass */
 .imagen {
   width: 100% !important;
   height: 320px;
   margin-left: 1%;
 }
 
-/* line 115, public/styles/sass/styles.sass */
+/* line 116, public/styles/sass/styles.sass */
 .parrafo1 {
   position: relative;
   margin-top: 50px;
 }
 
-/* line 119, public/styles/sass/styles.sass */
+/* line 120, public/styles/sass/styles.sass */
 .parrafo2 {
   position: relative;
   margin-top: 10px;
 }
 
-/* line 123, public/styles/sass/styles.sass */
+/* line 124, public/styles/sass/styles.sass */
 .boton-adjuntar {
   margin-top: 2.8%;
   width: 20%;
 }
 
-/* line 127, public/styles/sass/styles.sass */
+/* line 128, public/styles/sass/styles.sass */
 .login-button {
   width: 100% !important;
   position: relative;
   margin-top: 5% !important;
 }
 
-/* line 132, public/styles/sass/styles.sass */
+/* line 133, public/styles/sass/styles.sass */
 .boton-publicar {
   margin-top: 2.8%;
   width: 100%;
   line-height: 40%;
 }
 
-/* line 137, public/styles/sass/styles.sass */
+/* line 138, public/styles/sass/styles.sass */
 .btn-login {
   padding: 20px 0px 0px;
 }
 
-/* line 140, public/styles/sass/styles.sass */
+/* line 141, public/styles/sass/styles.sass */
 .formulario-card {
   padding: 3% !important;
 }
 
-/* line 143, public/styles/sass/styles.sass */
+/* line 144, public/styles/sass/styles.sass */
 .formulario-card .card {
   position: relative;
   top: 0px;
 }
 
-/* line 147, public/styles/sass/styles.sass */
+/* line 148, public/styles/sass/styles.sass */
 .form {
   top: 210px;
 }
 
-/* line 151, public/styles/sass/styles.sass */
+/* line 152, public/styles/sass/styles.sass */
 .card-add-beer {
   position: relative;
   top: 200px;
   margin-left: 10px;
 }
 
-/* line 156, public/styles/sass/styles.sass */
+/* line 157, public/styles/sass/styles.sass */
 .button-register {
   font-size: 18px;
   position: relative;
@@ -230,13 +230,13 @@ i.left {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 162, public/styles/sass/styles.sass */
+  /* line 163, public/styles/sass/styles.sass */
   header, main, footer {
     padding-left: 0;
   }
 }
 
-/* line 165, public/styles/sass/styles.sass */
+/* line 166, public/styles/sass/styles.sass */
 .input-field input[type=search] {
   display: block;
   line-height: inherit;
@@ -244,19 +244,19 @@ i.left {
   height: 63px !important;
 }
 
-/* line 171, public/styles/sass/styles.sass */
+/* line 172, public/styles/sass/styles.sass */
 .search-input {
   width: 500px !important;
   position: relative;
   left: 200px;
 }
 
-/* line 177, public/styles/sass/styles.sass */
+/* line 178, public/styles/sass/styles.sass */
 .cardview {
   margin-left: 30px !important;
 }
 
-/* line 180, public/styles/sass/styles.sass */
+/* line 181, public/styles/sass/styles.sass */
 .userdate {
   position: relative;
   padding-left: 8%;
@@ -269,7 +269,7 @@ i.left {
   color: #ffe089 !important;
 }
 
-/* line 191, public/styles/sass/styles.sass */
+/* line 192, public/styles/sass/styles.sass */
 .userdate2 {
   position: relative;
   padding-left: 8%;
@@ -278,7 +278,7 @@ i.left {
   font-size: 0.8rem;
 }
 
-/* line 198, public/styles/sass/styles.sass */
+/* line 199, public/styles/sass/styles.sass */
 .userdate3 {
   position: relative;
   padding-left: 8%;
@@ -286,46 +286,46 @@ i.left {
   font-size: 1.4rem;
 }
 
-/* line 206, public/styles/sass/styles.sass */
+/* line 207, public/styles/sass/styles.sass */
 .fecha {
   font-size: 1.2rem;
   position: relative;
   left: 18px;
 }
 
-/* line 211, public/styles/sass/styles.sass */
+/* line 212, public/styles/sass/styles.sass */
 .text-size {
   font-weight: bold !important;
 }
 
-/* line 214, public/styles/sass/styles.sass */
+/* line 215, public/styles/sass/styles.sass */
 .text-title {
   text-shadow: 4px 4px 4px #000;
 }
 
-/* line 217, public/styles/sass/styles.sass */
+/* line 218, public/styles/sass/styles.sass */
 .text-header h3 {
   position: relative;
 }
 
-/* line 221, public/styles/sass/styles.sass */
+/* line 222, public/styles/sass/styles.sass */
 .text-button {
   font-size: 1.5rem;
 }
 
-/* line 225, public/styles/sass/styles.sass */
+/* line 226, public/styles/sass/styles.sass */
 .cervezasFeed {
   position: relative;
   top: 40px;
 }
 
-/* line 230, public/styles/sass/styles.sass */
+/* line 231, public/styles/sass/styles.sass */
 .logo {
   position: relative;
   left: 40px;
 }
 
-/* line 235, public/styles/sass/styles.sass */
+/* line 236, public/styles/sass/styles.sass */
 .beer-cards p {
   white-space: nowrap;
   overflow: hidden;
@@ -333,24 +333,24 @@ i.left {
   max-width: 50ch;
 }
 
-/* line 242, public/styles/sass/styles.sass */
+/* line 243, public/styles/sass/styles.sass */
 .comment-text {
   color: #ffe089 !important;
 }
 
-/* line 246, public/styles/sass/styles.sass */
+/* line 247, public/styles/sass/styles.sass */
 .profile-img {
   position: relative;
   top: 13px;
   left: 0px;
 }
 
-/* line 252, public/styles/sass/styles.sass */
+/* line 253, public/styles/sass/styles.sass */
 .card-lugares .card {
   margin-top: 2%;
 }
 
-/* line 256, public/styles/sass/styles.sass */
+/* line 257, public/styles/sass/styles.sass */
 .footer-copyright {
   background: #01060877;
   background: -webkit-linear-gradient(to right, #121416, #171d1f);
@@ -359,43 +359,30 @@ i.left {
   padding: 1% !important;
 }
 
-/* line 264, public/styles/sass/styles.sass */
+/* line 265, public/styles/sass/styles.sass */
 .cerveza-title {
   margin-left: 2%;
   text-align: left;
 }
 
-/* line 269, public/styles/sass/styles.sass */
+/* line 270, public/styles/sass/styles.sass */
 .form-comentario {
   margin-left: 2%;
 }
 
 /* line 273, public/styles/sass/styles.sass */
-#dropdown1 {
-  background: #232526;
-  background: -webkit-linear-gradient(to right, #414345, #232526);
-  background: linear-gradient(to right, #414345, #232526);
-  color: #fff !important;
-}
-
-/* line 280, public/styles/sass/styles.sass */
-#dropdown1 li > a {
-  color: #ffe089 !important;
-}
-
-/* line 283, public/styles/sass/styles.sass */
 .avatar {
   position: relative;
   top: 15px;
 }
 
-/* line 287, public/styles/sass/styles.sass */
+/* line 277, public/styles/sass/styles.sass */
 .image-feed {
   margin-top: 20%;
   margin-left: 16%;
 }
 
-/* line 291, public/styles/sass/styles.sass */
+/* line 281, public/styles/sass/styles.sass */
 .title-card {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -403,7 +390,7 @@ i.left {
   white-space: nowrap;
 }
 
-/* line 297, public/styles/sass/styles.sass */
+/* line 287, public/styles/sass/styles.sass */
 .comments {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -411,7 +398,20 @@ i.left {
   white-space: nowrap;
 }
 
-/* line 303, public/styles/sass/styles.sass */
+/* line 294, public/styles/sass/styles.sass */
+#dropdown1 {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  color: #fff !important;
+}
+
+/* line 301, public/styles/sass/styles.sass */
+#dropdown1 li > a {
+  color: #ffe089 !important;
+}
+
+/* line 305, public/styles/sass/styles.sass */
 #slide-out {
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
@@ -419,7 +419,7 @@ i.left {
   color: #fff !important;
 }
 
-/* line 309, public/styles/sass/styles.sass */
+/* line 311, public/styles/sass/styles.sass */
 #slide-out i {
   color: #ffe089 !important;
 }
