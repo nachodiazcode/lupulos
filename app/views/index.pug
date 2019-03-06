@@ -4,42 +4,37 @@ html(lang = "es")
   head
     title=tituloPrincipal
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  rel="stylesheet"  type="text/css")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css")
+    link(href="/styles/css/styles.css" rel="stylesheet" type="text/css" )
 
-    link(href='/styles/css/styles.css', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Libre+Baskerville', rel='stylesheet')
+  body
 
-body
+    .col.offset-l4
+      .navbar-fixed
+        .conta
+        nav
+          a(href="#!" class="brand-logo logo") LÚPULOS
 
-  .col.offset-l4
-    
-    .navbar-fixed
-     .conta
-     nav
-      a(href="#!" class="brand-logo logo") LÚPULOS
-     
-      ul(class="right hide-on-med-and-down")
-        if user
-            li
-              a(href="/explorar")  Buscar Cerveceros
-                i(class="material-icons left") search
-            
-            li
-              a(href="/inicio")  Cervezas
-                i(class="material-icons left") file_upload
+          ul(class="right hide-on-med-and-down")
+            if user
+              li
+                a(href="/explorar")  Buscar Cerveceros
+                  i(class="material-icons left") search
 
-            li
-              a(href="/lugares")    Lugares
-                i(class="material-icons left") location_on
-            
-            li
-              a(href="#" class="dropdown-button" data-activates="dropdown1" data-target='dropdown1')   
+              li
+                a(href="/inicio")  Cervezas
+                  i(class="material-icons left") file_upload
+
+              li
+                a(href="/lugares")    Lugares
+                  i(class="material-icons left") location_on
+
+              li
+                a(href="#" class="dropdown-button" data-activates="dropdown1" data-target='dropdown1')   
                   img.circle.profile-img(src=`${user.avatar(20)}`)
 
-            ul#dropdown1.dropdown-content
+              ul#dropdown1.dropdown-content
                 li
                   a(href='/prensa') Prensa
                     i.material-icons local_parking
@@ -60,82 +55,58 @@ body
                   a(href='/logout')
                     i.material-icons exit_to_app
                     | Cerrar Sesión
-        else 
-         
-            ul(class="left hide-on-med-and-down")
+            else 
+
+              ul(class="left hide-on-med-and-down")
                 li
                   a(onclick="mostrar_ocultar()") 
                     i.material-icons exit_to_app
-                
 
-
-            
-       
-
-  .row
+    .row
 
       header.col.l12
         .container
-            h2.title LÚPULOS
-            h5.title.center La nueva aplicación para los amantes de la cerveza artesanal
-               br
-               br
-               .row
-                form(action="/login" method="post" id="formulario")
+          h2.title LÚPULOS
+          h5.title.center La nueva aplicación para los amantes de la cerveza artesanal
+            br
+            br
+            .row
+              form(action="/login" method="post" id="formulario")
 
-                  .login(class="card grey darken-3 col m5 l12 col offset-m2 left z-depth-4")
-                    .input-field
-                      input(type="text", name="email", class=" ")
-                      label Correo
-                    
-                    .input-field
-                      input(type="password", name="password", class="")
-                      label Contraseña
-                      button( type="submit" class="button btn btn-success grey darken-4 login-button ") LOGIN
-                      a( onclick="mostrar_ocultar()" class="button btn btn-success grey darken-4 login-button ") REGISTRARSE
-                .row
+                .login(class="card grey darken-3 col m5 l12 col offset-m2 left z-depth-4")
+                  .input-field
+                    input(type="text", name="email", class=" ")
+                    label Correo
 
-                form(action="/signup" method="post"  id="formulario2")
-                  .login(class="card grey darken-3 col m4 l12 left ")
-                    .input-field
-                      input(type="email", name="email", class="form-control")
-                      label Correo
-                    .input-field
-                      input(type="text", name="username", class="form-control")
-                      label Nombre de usuario
-                    .input-field
-                      input(type="text", name="biografia", class="form-control")
-                      label Cuenta un poco acerca de ti
-                    .input-field
-                      input(type="password", name="password", class="form-control")
-                      label Contraseña
-                      button( type="submit" class="button btn btn-success grey darken-4 login-button") CREAR UNA CUENTA
+                  .input-field
+                    input(type="password", name="password", class="")
+                    label Contraseña
+                    button( type="submit" class="button btn btn-success grey darken-4 login-button ") LOGIN
+                    a( onclick="mostrar_ocultar()" class="button btn btn-success grey darken-4 login-button ") REGISTRARSE
+              .row
 
-                      
+              form(action="/signup" method="post"  id="formulario2")
+                .login(class="card grey darken-3 col m4 l12 left ")
+                  .input-field
+                    input(type="email", name="email", class="form-control")
+                    label Correo
+                  .input-field
+                    input(type="text", name="username", class="form-control")
+                    label Nombre de usuario
+                  .input-field
+                    input(type="text", name="biografia", class="form-control")
+                    label Cuenta un poco acerca de ti
+                  .input-field
+                    input(type="password", name="password", class="form-control")
+                    label Contraseña
+                    button( type="submit" class="button btn btn-success grey darken-4 login-button") CREAR UNA CUENTA
 
-// JavaScript !!!!
-script.
-  window.onload = function ocultar_registro(){
-    var formulario2 = document.getElementById("formulario2");
-    formulario2.style.display = "none" ;
-  }
+  
+   
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+  script(type="text/javascript" src="/js/app.js")
 
-  function mostrar(){
-    document.getElementById("formulario2").style.display = "block" ;
-    document.getElementById("formulario").style.display = "none" ;
-  }
 
-  function ocultar(){
-    document.getElementById("formulario").style.display = "block" ;
-    document.getElementById("formulario2").style.display = "none" ;
-  }
 
-  function mostrar_ocultar(){
 
-    if(formulario2.style.display == "none"){
-        mostrar();
-    } else {
-      ocultar();
-    }
-
-  }

@@ -37,45 +37,40 @@ h3 {
 }
 
 /* line 28, public/styles/sass/styles.sass */
-i {
-  font-size: 30px !important;
-}
-
-/* line 31, public/styles/sass/styles.sass */
 nav {
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
 }
 
-/* line 36, public/styles/sass/styles.sass */
+/* line 33, public/styles/sass/styles.sass */
 footer {
   background: #232526;
   background: -webkit-linear-gradient(to right, #191a1b, #171a1b);
   background: linear-gradient(to right, #2b2c2e, #090a0a);
 }
 
-/* line 41, public/styles/sass/styles.sass */
+/* line 38, public/styles/sass/styles.sass */
 footer p {
   color: #ffe089 !important;
 }
 
-/* line 44, public/styles/sass/styles.sass */
+/* line 41, public/styles/sass/styles.sass */
 footer h5 {
   color: #ffe089 !important;
 }
 
-/* line 47, public/styles/sass/styles.sass */
+/* line 44, public/styles/sass/styles.sass */
 footer a {
   color: #ffe089 !important;
 }
 
-/* line 50, public/styles/sass/styles.sass */
+/* line 47, public/styles/sass/styles.sass */
 nav ul a {
   color: #ffe089 !important;
 }
 
-/* line 53, public/styles/sass/styles.sass */
+/* line 50, public/styles/sass/styles.sass */
 input {
   border-bottom: 1px solid #ffe089 !important;
   -webkit-box-shadow: 0 1px 0 0 #ffe089 !important;
@@ -83,7 +78,7 @@ input {
   color: #ffe089 !important;
 }
 
-/* line 59, public/styles/sass/styles.sass */
+/* line 56, public/styles/sass/styles.sass */
 .materialize-textarea {
   border-bottom: 1px solid #ffe089 !important;
   -webkit-box-shadow: 0 1px 0 0 #ffe089 !important;
@@ -91,143 +86,143 @@ input {
   color: #ffe089 !important;
 }
 
-/* line 65, public/styles/sass/styles.sass */
+/* line 62, public/styles/sass/styles.sass */
 label {
   color: #fff !important;
 }
 
-/* line 68, public/styles/sass/styles.sass */
+/* line 65, public/styles/sass/styles.sass */
 .brand-logo {
   color: #ffe089 !important;
 }
 
-/* line 72, public/styles/sass/styles.sass */
+/* line 69, public/styles/sass/styles.sass */
 .text-input {
   color: #ffe089 !important;
 }
 
-/* line 75, public/styles/sass/styles.sass */
+/* line 72, public/styles/sass/styles.sass */
 .nav-index {
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
 }
 
-/* line 79, public/styles/sass/styles.sass */
+/* line 76, public/styles/sass/styles.sass */
 .card-register {
   background: #000000;
   background: -webkit-linear-gradient(to right, #434343, #000000);
   background: linear-gradient(to right, #434343, #000000);
 }
 
-/* line 85, public/styles/sass/styles.sass */
+/* line 82, public/styles/sass/styles.sass */
 .title {
   color: #ffe089 !important;
 }
 
-/* line 88, public/styles/sass/styles.sass */
+/* line 85, public/styles/sass/styles.sass */
 .text-footer {
   color: #ffe089 !important;
   padding: 10px;
   font-weight: bold !important;
 }
 
-/* line 94, public/styles/sass/styles.sass */
+/* line 91, public/styles/sass/styles.sass */
 i.left {
   float: left;
   margin-right: 18px;
   margin-top: 5px;
 }
 
-/* line 99, public/styles/sass/styles.sass */
+/* line 96, public/styles/sass/styles.sass */
 .publish-icon {
   position: relative;
   top: 6px  !important;
 }
 
-/* line 103, public/styles/sass/styles.sass */
+/* line 100, public/styles/sass/styles.sass */
 .side-nav {
   background: #fff;
   top: 64px;
 }
 
-/* line 107, public/styles/sass/styles.sass */
+/* line 104, public/styles/sass/styles.sass */
 .menu-horizontal {
   background: #000 !important;
 }
 
-/* line 110, public/styles/sass/styles.sass */
+/* line 107, public/styles/sass/styles.sass */
 .login {
   padding: 90px !important;
 }
 
-/* line 113, public/styles/sass/styles.sass */
+/* line 110, public/styles/sass/styles.sass */
 .imagen {
   width: 100% !important;
   height: 320px;
   margin-left: 1%;
 }
 
-/* line 118, public/styles/sass/styles.sass */
+/* line 115, public/styles/sass/styles.sass */
 .parrafo1 {
   position: relative;
   margin-top: 50px;
 }
 
-/* line 122, public/styles/sass/styles.sass */
+/* line 119, public/styles/sass/styles.sass */
 .parrafo2 {
   position: relative;
   margin-top: 10px;
 }
 
-/* line 126, public/styles/sass/styles.sass */
+/* line 123, public/styles/sass/styles.sass */
 .boton-adjuntar {
   margin-top: 2.8%;
   width: 20%;
 }
 
-/* line 130, public/styles/sass/styles.sass */
+/* line 127, public/styles/sass/styles.sass */
 .login-button {
   width: 100% !important;
   position: relative;
   margin-top: 5% !important;
 }
 
-/* line 135, public/styles/sass/styles.sass */
+/* line 132, public/styles/sass/styles.sass */
 .boton-publicar {
   margin-top: 2.8%;
   width: 100%;
   line-height: 40%;
 }
 
-/* line 140, public/styles/sass/styles.sass */
+/* line 137, public/styles/sass/styles.sass */
 .btn-login {
   padding: 20px 0px 0px;
 }
 
-/* line 143, public/styles/sass/styles.sass */
+/* line 140, public/styles/sass/styles.sass */
 .formulario-card {
   padding: 3% !important;
 }
 
-/* line 146, public/styles/sass/styles.sass */
+/* line 143, public/styles/sass/styles.sass */
 .formulario-card .card {
   position: relative;
   top: 0px;
 }
 
-/* line 150, public/styles/sass/styles.sass */
+/* line 147, public/styles/sass/styles.sass */
 .form {
   top: 210px;
 }
 
-/* line 154, public/styles/sass/styles.sass */
+/* line 151, public/styles/sass/styles.sass */
 .card-add-beer {
   position: relative;
   top: 200px;
   margin-left: 10px;
 }
 
-/* line 159, public/styles/sass/styles.sass */
+/* line 156, public/styles/sass/styles.sass */
 .button-register {
   font-size: 18px;
   position: relative;
@@ -235,13 +230,13 @@ i.left {
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 165, public/styles/sass/styles.sass */
+  /* line 162, public/styles/sass/styles.sass */
   header, main, footer {
     padding-left: 0;
   }
 }
 
-/* line 168, public/styles/sass/styles.sass */
+/* line 165, public/styles/sass/styles.sass */
 .input-field input[type=search] {
   display: block;
   line-height: inherit;
@@ -249,19 +244,19 @@ i.left {
   height: 63px !important;
 }
 
-/* line 174, public/styles/sass/styles.sass */
+/* line 171, public/styles/sass/styles.sass */
 .search-input {
   width: 500px !important;
   position: relative;
   left: 200px;
 }
 
-/* line 180, public/styles/sass/styles.sass */
+/* line 177, public/styles/sass/styles.sass */
 .cardview {
   margin-left: 30px !important;
 }
 
-/* line 183, public/styles/sass/styles.sass */
+/* line 180, public/styles/sass/styles.sass */
 .userdate {
   position: relative;
   padding-left: 8%;
@@ -274,7 +269,7 @@ i.left {
   color: #ffe089 !important;
 }
 
-/* line 194, public/styles/sass/styles.sass */
+/* line 191, public/styles/sass/styles.sass */
 .userdate2 {
   position: relative;
   padding-left: 8%;
@@ -283,7 +278,7 @@ i.left {
   font-size: 0.8rem;
 }
 
-/* line 201, public/styles/sass/styles.sass */
+/* line 198, public/styles/sass/styles.sass */
 .userdate3 {
   position: relative;
   padding-left: 8%;
@@ -291,46 +286,46 @@ i.left {
   font-size: 1.4rem;
 }
 
-/* line 209, public/styles/sass/styles.sass */
+/* line 206, public/styles/sass/styles.sass */
 .fecha {
   font-size: 1.2rem;
   position: relative;
   left: 18px;
 }
 
-/* line 215, public/styles/sass/styles.sass */
+/* line 211, public/styles/sass/styles.sass */
 .text-size {
   font-weight: bold !important;
 }
 
-/* line 219, public/styles/sass/styles.sass */
+/* line 214, public/styles/sass/styles.sass */
 .text-title {
   text-shadow: 4px 4px 4px #000;
 }
 
-/* line 223, public/styles/sass/styles.sass */
+/* line 217, public/styles/sass/styles.sass */
 .text-header h3 {
   position: relative;
 }
 
-/* line 227, public/styles/sass/styles.sass */
+/* line 221, public/styles/sass/styles.sass */
 .text-button {
   font-size: 1.5rem;
 }
 
-/* line 231, public/styles/sass/styles.sass */
+/* line 225, public/styles/sass/styles.sass */
 .cervezasFeed {
   position: relative;
   top: 40px;
 }
 
-/* line 236, public/styles/sass/styles.sass */
+/* line 230, public/styles/sass/styles.sass */
 .logo {
   position: relative;
   left: 40px;
 }
 
-/* line 241, public/styles/sass/styles.sass */
+/* line 235, public/styles/sass/styles.sass */
 .beer-cards p {
   white-space: nowrap;
   overflow: hidden;
@@ -338,24 +333,24 @@ i.left {
   max-width: 50ch;
 }
 
-/* line 248, public/styles/sass/styles.sass */
+/* line 242, public/styles/sass/styles.sass */
 .comment-text {
   color: #ffe089 !important;
 }
 
-/* line 252, public/styles/sass/styles.sass */
+/* line 246, public/styles/sass/styles.sass */
 .profile-img {
   position: relative;
   top: 13px;
   left: 0px;
 }
 
-/* line 258, public/styles/sass/styles.sass */
+/* line 252, public/styles/sass/styles.sass */
 .card-lugares .card {
   margin-top: 2%;
 }
 
-/* line 262, public/styles/sass/styles.sass */
+/* line 256, public/styles/sass/styles.sass */
 .footer-copyright {
   background: #01060877;
   background: -webkit-linear-gradient(to right, #121416, #171d1f);
@@ -364,18 +359,18 @@ i.left {
   padding: 1% !important;
 }
 
-/* line 270, public/styles/sass/styles.sass */
+/* line 264, public/styles/sass/styles.sass */
 .cerveza-title {
   margin-left: 2%;
   text-align: left;
 }
 
-/* line 275, public/styles/sass/styles.sass */
+/* line 269, public/styles/sass/styles.sass */
 .form-comentario {
   margin-left: 2%;
 }
 
-/* line 279, public/styles/sass/styles.sass */
+/* line 273, public/styles/sass/styles.sass */
 #dropdown1 {
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
@@ -383,24 +378,24 @@ i.left {
   color: #fff !important;
 }
 
-/* line 286, public/styles/sass/styles.sass */
+/* line 280, public/styles/sass/styles.sass */
 #dropdown1 li > a {
   color: #ffe089 !important;
 }
 
-/* line 289, public/styles/sass/styles.sass */
+/* line 283, public/styles/sass/styles.sass */
 .avatar {
   position: relative;
   top: 15px;
 }
 
-/* line 293, public/styles/sass/styles.sass */
+/* line 287, public/styles/sass/styles.sass */
 .image-feed {
   margin-top: 20%;
   margin-left: 16%;
 }
 
-/* line 297, public/styles/sass/styles.sass */
+/* line 291, public/styles/sass/styles.sass */
 .title-card {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -408,10 +403,23 @@ i.left {
   white-space: nowrap;
 }
 
-/* line 303, public/styles/sass/styles.sass */
+/* line 297, public/styles/sass/styles.sass */
 .comments {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 50ch;
   white-space: nowrap;
+}
+
+/* line 303, public/styles/sass/styles.sass */
+#slide-out {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  color: #fff !important;
+}
+
+/* line 309, public/styles/sass/styles.sass */
+#slide-out i {
+  color: #ffe089 !important;
 }

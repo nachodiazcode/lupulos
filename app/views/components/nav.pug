@@ -1,47 +1,86 @@
-.col.offset-l4
-  .navbar-fixed
-     nav
-      a(href="#!" class="brand-logo logo") LÚPULOS
+
+nav
+  
+    .container
       
-        
+      a(href="#!" class="brand-logo ") LÚPULOS
+      a.sidenav-trigger(href='#', data-target='slide-out')
+        i.material-icons menu
       ul(class="right hide-on-med-and-down")
-         if user
-            li
-              a(href="/explorar")  Buscar Cerveceros
-                i(class="material-icons left") search
+
+        if user
+          li
+            a(href="/explorar")  Buscar Cerveceros
+              i(class="material-icons left") search
+
+          li
+            a(href="/inicio")  Cervezas
+              i(class="material-icons left") file_upload
+
+          li
+            a(href="/lugares")    Lugares
+              i(class="material-icons left") location_on
+
+          li
+            a(href="#" class="dropdown-button" data-activates="dropdown1" data-target='dropdown1')   
+              img.circle.profile-img(src=`${user.avatar(20)}`)
+
+      ul(id="slide-out" class="sidenav" )
+
+        if user
+
+          li
+            .user-view
+              .background
+                img(src='/img/purty_wood.png')
+              a(href='#user')
+                img.circle(src=`${user.avatar(40)}`)
+              a(href='/mi/perfil')
+                span.white-text.name  #{user.username}
+              a(href='/mi/perfil')
+                span.white-text.email #{user.email}
+
+          li
+            a(href="/explorar")  Buscar Cerveceros
+              i(class="material-icons left") search
+
+          li
+            a(href="/inicio")  Cervezas
+              i(class="material-icons left") file_upload
+
+          li
+            a(href="/lugares")    Lugares
+              i(class="material-icons left") location_on
+
             
+
+
+         
+          ul#dropdown1.dropdown-content
             li
-              a(href="/inicio")  Cervezas
-                i(class="material-icons left") file_upload
+              a(href='/prensa') Prensa
+                i.material-icons local_parking
+            li
+              a(href='/blog') Blog
+                i.material-icons format_align_left
+
+            li.divider(tabindex='-1')
 
             li
-              a(href="/lugares")    Lugares
-                i(class="material-icons left") location_on
-            
+              a(href='/privacidad') Privacidad 
+                i.material-icons security
             li
-              a(href="#" class="dropdown-button" data-activates="dropdown1" data-target='dropdown1')   
-                  img.circle.profile-img(src=`${user.avatar(20)}`)
+              a(href='/mi/perfil')
+                i.material-icons account_circle
+                | Mi cuenta
+            li
+              a(href='/logout')
+                i.material-icons exit_to_app
+                | Cerrar Sesión
 
-            ul#dropdown1.dropdown-content
-                li
-                  a(href='/prensa') Prensa
-                    i.material-icons local_parking
-                li
-                  a(href='/blog') Blog
-                    i.material-icons format_align_left
+        else 
 
-                li.divider(tabindex='-1')
-
-                li
-                  a(href='/privacidad') Privacidad 
-                    i.material-icons security
-                li
-                  a(href='/mi/perfil')
-                    i.material-icons account_circle
-                    | Mi cuenta
-                li
-                  a(href='/logout')
-                    i.material-icons exit_to_app
-                    | Cerrar Sesión
-
-         else 
+          ul(class="left hide-on-med-and-down")
+            li
+              a(onclick="mostrar_ocultar()") 
+                i.material-icons exit_to_app
