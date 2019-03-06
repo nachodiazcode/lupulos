@@ -19,17 +19,17 @@ block content
               span.amber-text.text-lighten-2 
                 | #{usuario.biografia}
               
-      .col.s12.m6.offset-m2.l6
+      .col.s12.m6.offset-.s6.m2.l6
         .card-panel.grey.darken-4.z-depth-1
 
           .row.valign-wrapper
-            .col.s3
+            .col.s4
               span.black-text.amber-text.text-lighten-2 
                 | Seguidores 
                 br
                 | #{usuario.seguidores.length}
               // notice the "circle" class
-            .col.s3
+            .col.s4
               span.black-text.amber-text.text-lighten-2 
                 |  Siguiendo
                 br
@@ -54,7 +54,7 @@ block content
     if cervezas 
       each cerveza in cervezas 
 
-            .card.col.l4.grey.darken-3
+            .card.col.s12.m12.l4.grey.darken-3
               i.material-icons.right more_vert
               .card-image.waves-effect.waves-block.waves-ligh
                 a(herf=`/cerveza/${cerveza._id}`)
