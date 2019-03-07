@@ -406,12 +406,12 @@ i.left {
   color: #fff !important;
 }
 
-/* line 301, public/styles/sass/styles.sass */
+/* line 302, public/styles/sass/styles.sass */
 #dropdown1 li > a {
   color: #ffe089 !important;
 }
 
-/* line 305, public/styles/sass/styles.sass */
+/* line 306, public/styles/sass/styles.sass */
 #slide-out {
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
@@ -419,7 +419,7 @@ i.left {
   color: #fff !important;
 }
 
-/* line 311, public/styles/sass/styles.sass */
+/* line 312, public/styles/sass/styles.sass */
 #slide-out i {
   color: #ffe089 !important;
 }
