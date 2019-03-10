@@ -3,16 +3,17 @@
 const           express  = require('express');
 const           session  = require('express-session');
 const        MongoStore  = require('connect-mongo')(session);
-const            config  = require('./config/config');
+const             config  = require('./config/config');
 const              glob  = require('glob');
 const          mongoose  = require('mongoose');
 const        bodyParser  = require('body-parser');
-const    PassportConfig  = require('./config/passport');
+const     PassportConfig  = require('./config/passport');
 const          passport  = require('passport');
 const            multer  = require('multer');
-const               flash = require('express-flash');
+const              flash  = require('express-flash');
 
-const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
+// Conección a MongoDB
+const mongo_url = "mongodb://127.0.0.1:27017/lupulos";
   
 const app = express();
 
@@ -85,7 +86,6 @@ app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
 const controladorAgregar = require('./app/controllers/agregar');
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
-
 //ControladorInicio
 const controladorInicio =  require('./app/controllers/inicio');
 
@@ -96,14 +96,6 @@ app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio);
 const controladorLugares =  require('./app/controllers/lugares');
 app.get('/lugares',  PassportConfig.estaAutenticado, controladorLugares.getLugares);
 app.get('/lugar/:item', PassportConfig.estaAutenticado, controladorLugares.getDetalleDelLugar);
-
-//ControladorEventos
-const controladorEventos =  require('./app/controllers/eventos');
-app.get('/eventos', PassportConfig.estaAutenticado, controladorEventos.getEventos);
-
-//ControladorComunidad
-const controladorComunidad=  require('./app/controllers/comunidad');
-app.get('/comunidad', PassportConfig.estaAutenticado, controladorComunidad.getComunidad);
 
 //ControladorPerfil
 const controladorPerfil =  require('./app/controllers/perfil');

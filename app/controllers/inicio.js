@@ -19,7 +19,6 @@ module.exports.getInicio =  (req, res, next) => {
 
     }).sort({_id:-1})
 
-    
 
 };
 
@@ -28,9 +27,9 @@ module.exports.getDetallesCervezas =  (req, res, next) => {
     const cervezaItem = req.params.item;
 
     getInformacionCervezas(cervezaItem)
-    .then((cervezas, usuarios) => {
+    .then((cervezas) => {
       res.render('cerveza', {
-        cervezas      })
+        cervezas })
     })
 
 
