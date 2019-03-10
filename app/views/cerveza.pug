@@ -6,21 +6,18 @@ block content
                if cervezas
                     each cerveza in cervezas
                          .row
-                              .col.l5
+                              .col.l4
                                    a(href=`/lugar/${cerveza._id}`)
                                    br
                                    img(src=`/upload/${cerveza.imagen}` class="imagen responsive-img")
-                              .col.l6
+                              .col.l8
                                    h2.title.left.cerveza-title #{cerveza.title}
-                                   p.col.l12 #{cerveza.comentarios}
-
-                                   form(method='post' class="form-comentario")
-                                     .input-field
-                                        input(type='text', name='title', placeholder='Escribe un comentario')
-                                        br
-                                        br
-                                        button(type='submit' class="btn right blue-grey") Comentar
-                                           
-
-
-
+                              .col.l12
+                                   form( method="post" role="form")
+                                        .input-field
+                                             label Escribe un comentario
+                                             input(type="text" name="comentario")
+                                             a(href=`/comentar/${cerveza.id}` class="btn wave-effect right") Comentar
+                                             br
+                                             p.col.l12 #{cerveza.comentarios.length}  Comentarios 
+                                             p.col.l12 #{cerveza.comentarios}

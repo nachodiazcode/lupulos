@@ -1,3 +1,5 @@
+
+//librerías 
 const           express  = require('express');
 const           session  = require('express-session');
 const        MongoStore  = require('connect-mongo')(session);
@@ -8,7 +10,7 @@ const        bodyParser  = require('body-parser');
 const    PassportConfig  = require('./config/passport');
 const          passport  = require('passport');
 const            multer  = require('multer');
-
+const               flash = require('express-flash');
 
 const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
   
@@ -23,6 +25,7 @@ mongoose.connection.on('error', (err) => {
 
 })
 
+app.use(flash());
 
 mongoose.connect(config.db);
 
@@ -82,13 +85,12 @@ app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
 const controladorAgregar = require('./app/controllers/agregar');
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
-const controladorIndex =  require('./app/controllers/index');
-app.get('/index',  controladorIndex.getIndex);
 
 //ControladorInicio
 const controladorInicio =  require('./app/controllers/inicio');
-app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio);
+
 app.get('/cerveza/:item', controladorInicio.getDetallesCervezas);
+app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio);
 
 //ControladorLugares
 const controladorLugares =  require('./app/controllers/lugares');

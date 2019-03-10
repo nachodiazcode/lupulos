@@ -1,7 +1,10 @@
+// Librerías 
 const  express = require('express');
 const  session = require('express-session');
-const  Lugares = require('../models/lugares');
 const   router = express.Router();
+
+//Archivos
+const  Lugares = require('../models/Lugares');
 
 
 module.exports = function (app) {

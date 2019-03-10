@@ -1,6 +1,6 @@
 const express  = require('express');
 const mongoose = require('mongoose');
-const Cervezas  = require('../models/cervezas');
+const Cervezas  = require('../models/Cervezas');
 const Usuario   =  require('../models/user');
 const crypto = require('crypto');
 const router  = express.Router();

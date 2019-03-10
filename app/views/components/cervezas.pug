@@ -9,7 +9,7 @@
             h5(class="comment-text") #{cerveza.title}
             a(href=`/cerveza/${cerveza._id}`)        
               img(src=`/upload/${cerveza.imagen}` class="imagen card-image")
-            p(class="comment-text") #{cerveza.comentarios}
+            p(class="comment-text") #{cerveza.descripcion}
 
 //manejo de errores
 if cervezas.length <=0

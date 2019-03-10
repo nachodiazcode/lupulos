@@ -3,16 +3,11 @@ const   Schema = mongoose.Schema;
 
 const Cervezas = new Schema({
 
-  title: String,
-  descripcion: String,
-  imagen: String,
-  comentarios: String,
-  comentario: String,
-
-  fecha: String,
+  title: {type:String},
+  descripcion: {type: String},
+  imagen: {type: String},
   usuario: {type: Schema.Types.ObjectId, ref:'user'},
   username:{type: String, ref:'user'},
-
 
 
 } , { timestamps: true } ) ;

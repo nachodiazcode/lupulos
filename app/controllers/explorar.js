@@ -23,3 +23,4 @@ module.exports.postExplorar = (req, res ) => {
                res.render('explorar', {users}) ;
           })
 }
+

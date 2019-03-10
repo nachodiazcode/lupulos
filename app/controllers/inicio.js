@@ -1,7 +1,8 @@
 const   express = require('express');
 const   session = require('express-session');
 const    router = express.Router();
-const Cervezas = require('../models/cervezas');
+const Cervezas = require('../models/Cervezas');
+const controladorAgregar= require('./agregar')
 
 module.exports = function (app) {
     app.use('/', router);
@@ -18,25 +19,25 @@ module.exports.getInicio =  (req, res, next) => {
 
     }).sort({_id:-1})
 
+    
+
 };
 
 module.exports.getDetallesCervezas =  (req, res, next) => {
 
-    const cervezasItem = req.params.item;
+    const cervezaItem = req.params.item;
 
-    getInformacionCervezas(cervezasItem)
-    .then((cervezas) => {
+    getInformacionCervezas(cervezaItem)
+    .then((cervezas, usuarios) => {
       res.render('cerveza', {
-        cervezas
-      })
+        cervezas      })
     })
 
 
 };
 
-const getInformacionCervezas = (CervezasItem) => {
+const getInformacionCervezas = (cervezaItem) => {
     return Promise.all([
-         Cervezas.findOne({_id: CervezasItem}),
-
+         Cervezas.findOne({_id: cervezaItem}),
     ]);
 }

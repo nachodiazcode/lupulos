@@ -58,7 +58,7 @@ nuevoUsuario.methods.compararPassword = function ( password, cb) {
 
 nuevoUsuario.methods.avatar = function(dimension=55){
     const md5 = crypto.createHash('md5').update(this.email).digest('hex') ;
-    return `https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50    ` ;
+    return `https://api.adorable.io/avatars/${dimension}/${md5}` ;
 }
 
 

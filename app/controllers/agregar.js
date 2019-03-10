@@ -2,8 +2,10 @@ const   express   = require('express');
 const    multer   = require('multer');
 const   mongoose  = require('mongoose');
 const     router  = express.Router();
-const   Cervezas  = require('../models/cervezas');
+
+const   Cervezas  = require('../models/Cervezas');
 const    Usuario  = require('../models/user');
+
 
 const storage = multer.diskStorage({
 	destination: function(req,file,next) {
@@ -18,21 +20,16 @@ const storage = multer.diskStorage({
 
 const upload = multer ({ storage : storage }) ;
 
-
-
 module.exports = function(app){
 	app.use('/',router);
 };
-
-
-
 
 const multerConf = {
 
 	storage : multer.diskStorage({
 
 		destination : function (req ,file,next){
-			next(null, '../../public/imagenes-subidas/');
+			next(null, './public/upload/');
 		},
 
 		filename : function(req, file, next){
@@ -56,19 +53,21 @@ const multerConf = {
 
 	})
 
-}
+};
 
-module.exports.getAgregar = (req, res) => {
+module.exports.getAgregar = (req, res, cervezas, users) => {
 
 	res.render('agregar', {
 		titulo : 'Agrega una nueva cerveza',
+		cervezas,
+		users
 	});
 
 };
 
 module.exports.postAgregar = (req,res) => {
 	
-	const nuevoRegistro = new Cervezas({
+	const nuevaCerveza = new Cervezas({
 		title:req.body.title,
 		descripcion:req.body.descripcion,
 		imagen:req.file.filename,
@@ -77,14 +76,15 @@ module.exports.postAgregar = (req,res) => {
 		username: req.user.username
 	});
 
-	nuevoRegistro.save();
+	nuevaCerveza.save();
 	res.redirect('/inicio');
 
-}
+};
+
 
 module.exports.getCervezasParaUsuarios  = (usuarioIds) => {
      return Cervezas
           .find({usuario: {$in: usuarioIds}})
           .sort({createdAt: -1 })
           .populate('users');
-}
+};
