@@ -90,32 +90,33 @@ const upload = multer ({ storage : storage })
 
 // ****** RUTAS ********** //
 
-app.get('/index', controladorIndex.getIndex)
+//Agregarmos las cervezas
+app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar)
 
+//Obtenemos las cervezas
+app.get('/cerveza/:item', controladorInicio.getDetallesCervezas)
+
+app.get('/index', controladorIndex.getIndex)
+app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio)
+
+//Registramos un usuario
 app.get('/signup', controladorUsuario.postSignUp)
 app.get('/login', controladorUsuario.postLogin)
 app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout)
 
-//Agragamos las cervezas !!!!!
-app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar)
-
-
-//ControladorInicio
-
-app.get('/cerveza/:item', controladorInicio.getDetallesCervezas)
-app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio)
-
-//ControladorLugares
+//Lugares
 app.get('/lugares',  PassportConfig.estaAutenticado, controladorLugares.getLugares)
 app.get('/lugar/:item', PassportConfig.estaAutenticado, controladorLugares.getDetalleDelLugar)
 
-//ControladorPerfil
+//Perfil
 app.get('/mi/perfil',  PassportConfig.estaAutenticado, controladorPerfil.getMiPerfil, controladorInicio.getDetallesCervezas)
 app.get('/perfil/:id', controladorPerfil.getPerfil)
+
+//Seguir usuarios
 app.get('/seguir/:id', PassportConfig.estaAutenticado, controladorPerfil.seguir)
 app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseguir)
 
-//ControladorExplorar : Donde explorar a los distintos usuarios
+//Buscar Usuarios
 app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar)
 app.post('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.postExplorar)
 
