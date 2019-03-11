@@ -7,10 +7,10 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-module.exports.getIndex = (req, res)=>{
+module.exports.getIndex = (req, res, next)=>{
 
-    res.render('inicio', {
-      
-    })
+  res.render('/',{
+    tituloPrincipal : "¡Bienvenido a Lupulos!"
+  });
 
-  }
+};
