@@ -88,7 +88,6 @@ const storage = multer.diskStorage({
 
 const upload = multer ({ storage : storage }) 
 
-// ****** RUTAS ********** //
 
 //Agregarmos las cervezas
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar)

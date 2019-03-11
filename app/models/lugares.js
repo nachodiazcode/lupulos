@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const Lugares = new Schema  ({
 
      nombre: {type:String},
