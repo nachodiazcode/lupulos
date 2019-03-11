@@ -7,12 +7,10 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-module.exports.getIndex = (req, res, next)=>{
+module.exports.getIndex = (req, res)=>{
 
-    res.render('/',{
-     
-    });
+    res.render('inicio', {
+      
+    })
 
-};
-
-
+  }

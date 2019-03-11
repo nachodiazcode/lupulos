@@ -3,17 +3,16 @@
 const           express  = require('express');
 const           session  = require('express-session');
 const        MongoStore  = require('connect-mongo')(session);
-const             config  = require('./config/config');
+const            config  = require('./config/config');
 const              glob  = require('glob');
 const          mongoose  = require('mongoose');
 const        bodyParser  = require('body-parser');
-const     PassportConfig  = require('./config/passport');
+const    PassportConfig  = require('./config/passport');
 const          passport  = require('passport');
 const            multer  = require('multer');
-const              flash  = require('express-flash');
+const               flash = require('express-flash');
 
-// Conección a MongoDB
-const mongo_url = "mongodb://127.0.0.1:27017/lupulos";
+const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
   
 const app = express();
 
@@ -77,6 +76,10 @@ const upload = multer ({ storage : storage }) ;
 
 // ****** RUTAS ********** //
 
+
+const controladorIndex =  require('./app/controllers/index');
+app.get('/index', controladorIndex.getIndex);
+
 const controladorUsuario =  require('./app/controllers/user');
 app.get('/signup', controladorUsuario.postSignUp);
 app.get('/login', controladorUsuario.postLogin);
@@ -85,6 +88,7 @@ app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
 //Agragamos las cervezas !!!!!
 const controladorAgregar = require('./app/controllers/agregar');
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
+
 
 //ControladorInicio
 const controladorInicio =  require('./app/controllers/inicio');
