@@ -4,7 +4,7 @@ const  session = require('express-session');
 const   router = express.Router();
 
 //Archivos
-const  Lugares = require('../models/Lugares');
+const Lugares = require('../models/Lugares');
 
 
 module.exports = function (app) {

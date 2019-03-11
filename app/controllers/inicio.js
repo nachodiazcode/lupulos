@@ -1,8 +1,11 @@
 const   express = require('express');
 const   session = require('express-session');
 const    router = express.Router();
-const Cervezas = require('../models/Cervezas');
 const controladorAgregar= require('./agregar')
+
+
+const Cervezas = require('../models/Cervezas');
+
 
 module.exports = function (app) {
     app.use('/', router);
