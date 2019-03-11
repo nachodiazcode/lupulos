@@ -9,7 +9,7 @@ const router  = express.Router();
 
 //modelos 
 const Cervezas  = require('../models/Cervezas');
-const Usuario   =  require('../models/user');
+const Usuario   =  require('../models/Usuarios');
 //controladores
 const controladorCervezas = require('./agregar');
 const controladorInicio = require('./inicio');

@@ -80,7 +80,7 @@ const upload = multer ({ storage : storage }) ;
 const controladorIndex =  require('./app/controllers/index');
 app.get('/index', controladorIndex.getIndex);
 
-const controladorUsuario =  require('./app/controllers/user');
+const controladorUsuario =  require('./app/controllers/usuarios');
 app.get('/signup', controladorUsuario.postSignUp);
 app.get('/login', controladorUsuario.postLogin);
 app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);

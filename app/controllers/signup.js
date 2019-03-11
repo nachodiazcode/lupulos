@@ -5,7 +5,7 @@ const     mongoose   = require('mongoose');
 const   bodyParser   = require('body-parser');
 const     passport   = require('passport');
 const       router   = express.Router();
-const      Usuario   = require('../models/user');
+const      Usuario   = require('../models/Usuarios');
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/lupulos";
 

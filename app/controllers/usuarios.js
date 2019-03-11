@@ -4,9 +4,12 @@ const    MongoStore = require('connect-mongo')(session);
 const        router = express.Router();
 const      mongoose = require('mongoose');
 const    bodyParser = require('body-parser');
-const  nuevoUsuario = mongoose.model('users');
 const      passport = require('passport');
-const       Usuario = require('../models/user');
+
+
+
+
+const Usuario = require('../models/Usuarios');
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/lupulos";
 

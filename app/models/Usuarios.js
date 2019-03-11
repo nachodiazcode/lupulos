@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
-const nuevoUsuario = new Schema({
+const Usuarios = new Schema({
 
   email: {type: String, lowercase: true },
   username: {type: String},
@@ -14,7 +14,7 @@ const nuevoUsuario = new Schema({
 
 }, { timestamps: true } )
 
-  nuevoUsuario.pre('save', function ( next ){
+Usuarios.pre('save', function ( next ){
 
       const usuario = this ;
       const usuarioId = usuario._id ;
@@ -46,7 +46,7 @@ const nuevoUsuario = new Schema({
       })
 })
 
-nuevoUsuario.methods.compararPassword = function ( password, cb) {
+Usuarios.methods.compararPassword = function ( password, cb) {
 
   bcrypt.compare(password, this.password, (err, sonIguales ) => {
       if(err){
@@ -56,12 +56,12 @@ nuevoUsuario.methods.compararPassword = function ( password, cb) {
   })
 }
 
-nuevoUsuario.methods.avatar = function(dimension=55){
+Usuarios.methods.avatar = function(dimension=55){
     const md5 = crypto.createHash('md5').update(this.email).digest('hex') ;
     return `https://api.adorable.io/avatars/${dimension}/${md5}` ;
 }
 
 
-module.exports = mongoose.model('users', nuevoUsuario) ;
+module.exports = mongoose.model('usuarios', Usuarios) ;
 
 

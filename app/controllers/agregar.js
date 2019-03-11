@@ -4,7 +4,7 @@ const   mongoose  = require('mongoose');
 const     router  = express.Router();
 
 const   Cervezas  = require('../models/Cervezas');
-const    Usuario  = require('../models/user');
+const    Usuario  = require('../models/Usuarios');
 
 
 const storage = multer.diskStorage({
