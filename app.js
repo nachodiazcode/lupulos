@@ -1,43 +1,57 @@
 
 //librerías 
-const           express  = require('express');
-const           session  = require('express-session');
-const        MongoStore  = require('connect-mongo')(session);
-const            config  = require('./config/config');
-const              glob  = require('glob');
-const          mongoose  = require('mongoose');
-const        bodyParser  = require('body-parser');
-const    PassportConfig  = require('./config/passport');
-const          passport  = require('passport');
-const            multer  = require('multer');
-const               flash = require('express-flash');
+const express  = require('express')
+const session  = require('express-session')
+const MongoStore  = require('connect-mongo')(session)
+const glob  = require('glob')
+const mongoose  = require('mongoose')
+const bodyParser  = require('body-parser')
+const passport  = require('passport')
+const multer  = require('multer')
+const flash = require('express-flash')
+const path = require('path')
 
-const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
+//Archivos
+const config   = require('./config/config')
+const PassportConfig   = require('./config/passport')
+
+//Controladores 
+
+const controladorAgregar = require('./app/controllers/agregar')
+const controladorInicio =  require('./app/controllers/inicio')
+const controladorLugares =  require('./app/controllers/lugares')
+const controladorIndex =  require('./app/controllers/index')
+const controladorUsuario =  require('./app/controllers/usuarios')
+const controladorPerfil =  require('./app/controllers/perfil')
+const controladorExplorar =  require('./app/controllers/explorar')
+
+//Conectar a MongoDB
+const mongo_url  = "mongodb://127.0.0.1:27017/lupulos"
   
-const app = express();
+const app = express()
 
-mongoose.Promise = global.Promise;
-mongoose.connect(mongo_url);
+mongoose.Promise = global.Promise
+mongoose.connect(mongo_url)
 mongoose.connection.on('error', (err) => {
 
-  throw err ;
-  process.exit(1);
+  throw err 
+  process.exit(1)
 
 })
 
-app.use(flash());
+app.use(flash())
 
-mongoose.connect(config.db);
+mongoose.connect(config.db)
 
-let db = mongoose.connection;
+let db = mongoose.connection
 db.on('error', () => {
-  throw new Error('unable to connect to database at ' + config.db);
-});
+  throw new Error('unable to connect to database at ' + config.db)
+})
 
-let models = glob.sync(config.root + '/app/models/*.js');
+let models = glob.sync(config.root + '/app/models/*.js')
 models.forEach( (model) => {
-  require(model);
-});
+  require(model)
+})
 
 app.use(session({
   secret:'ESTO ES SECRETO',
@@ -49,73 +63,65 @@ app.use(session({
   })
 }))
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize())
+app.use(passport.session())
 //bodyParser nos ayuda a traernos una información y transformarla a JSON
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
 app.use((req,res,next)=>{
-  res.locals.user = req.user  ;
-  next();
+  res.locals.user = req.user  
+  next()
 })
 
 //utilizamos multer para subir imágenes 
 const storage = multer.diskStorage({
 	destination: function(req,file,next) {
-		next(null, './public/upload/');
+		next(null, './public/upload/')
 	},
 
 	filename: function(req, file, next) {
-		next(null, file.originalname);
+		next(null, file.originalname)
 	}
 
-});
+})
 
-const upload = multer ({ storage : storage }) ;
+const upload = multer ({ storage : storage }) 
 
 // ****** RUTAS ********** //
 
+app.get('/index', controladorIndex.getIndex)
 
-const controladorIndex =  require('./app/controllers/index');
-app.get('/index', controladorIndex.getIndex);
-
-const controladorUsuario =  require('./app/controllers/usuarios');
-app.get('/signup', controladorUsuario.postSignUp);
-app.get('/login', controladorUsuario.postLogin);
-app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
+app.get('/signup', controladorUsuario.postSignUp)
+app.get('/login', controladorUsuario.postLogin)
+app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout)
 
 //Agragamos las cervezas !!!!!
-const controladorAgregar = require('./app/controllers/agregar');
-app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
+app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar)
 
 
 //ControladorInicio
-const controladorInicio =  require('./app/controllers/inicio');
 
-app.get('/cerveza/:item', controladorInicio.getDetallesCervezas);
-app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio);
+app.get('/cerveza/:item', controladorInicio.getDetallesCervezas)
+app.get('/inicio', PassportConfig.estaAutenticado, controladorInicio.getInicio)
 
 //ControladorLugares
-const controladorLugares =  require('./app/controllers/lugares');
-app.get('/lugares',  PassportConfig.estaAutenticado, controladorLugares.getLugares);
-app.get('/lugar/:item', PassportConfig.estaAutenticado, controladorLugares.getDetalleDelLugar);
+app.get('/lugares',  PassportConfig.estaAutenticado, controladorLugares.getLugares)
+app.get('/lugar/:item', PassportConfig.estaAutenticado, controladorLugares.getDetalleDelLugar)
 
 //ControladorPerfil
-const controladorPerfil =  require('./app/controllers/perfil');
-app.get('/mi/perfil',  PassportConfig.estaAutenticado, controladorPerfil.getMiPerfil, controladorInicio.getDetallesCervezas);
-app.get('/perfil/:id', controladorPerfil.getPerfil);
-app.get('/seguir/:id', PassportConfig.estaAutenticado, controladorPerfil.seguir);
-app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseguir);
+app.get('/mi/perfil',  PassportConfig.estaAutenticado, controladorPerfil.getMiPerfil, controladorInicio.getDetallesCervezas)
+app.get('/perfil/:id', controladorPerfil.getPerfil)
+app.get('/seguir/:id', PassportConfig.estaAutenticado, controladorPerfil.seguir)
+app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseguir)
 
 //ControladorExplorar : Donde explorar a los distintos usuarios
-const controladorExplorar=  require('./app/controllers/explorar');
-app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar);
-app.post('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.postExplorar);
+app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar)
+app.post('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.postExplorar)
 
-require('./config/express')(app, config);
+require('./config/express')(app, config)
 
 let server = app.listen(config.port, () => {
-  console.log('Express server listening on port ' + config.port);
-});
+  console.log('Express server listening on port ' + config.port)
+})
 

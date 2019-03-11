@@ -1,3 +1,4 @@
+//Librerías
 const       express = require('express');
 const       session = require('express-session');
 const    MongoStore = require('connect-mongo')(session);
@@ -6,11 +7,9 @@ const      mongoose = require('mongoose');
 const    bodyParser = require('body-parser');
 const      passport = require('passport');
 
-
-
-
+//Archivos
 const Usuario = require('../models/Usuarios');
-
+//Conectar a MongoDB
 const MONGO_URL = "mongodb://127.0.0.1:27017/lupulos";
 
 const app = express();
@@ -84,8 +83,3 @@ module.exports.logout = (req, res) => {
     req.logout();
     res.redirect('/');
 }
-
-router.get('/user', (req, res, next)  => {
-
-
-});

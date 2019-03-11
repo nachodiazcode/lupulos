@@ -1,11 +1,10 @@
+//Liberías
 const   express = require('express');
 const   session = require('express-session');
 const    router = express.Router();
 const controladorAgregar= require('./agregar')
-
-
+//Archivos
 const Cervezas = require('../models/Cervezas');
-
 
 module.exports = function (app) {
     app.use('/', router);

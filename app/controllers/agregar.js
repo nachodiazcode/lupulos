@@ -1,15 +1,15 @@
-const   express   = require('express');
-const    multer   = require('multer');
+//Librerías
+const    express  = require('express');
+const     multer  = require('multer');
 const   mongoose  = require('mongoose');
 const     router  = express.Router();
-
+//Archivos
 const   Cervezas  = require('../models/Cervezas');
 const    Usuario  = require('../models/Usuarios');
 
-
 const storage = multer.diskStorage({
 	destination: function(req,file,next) {
-		next(null, '../../public/imagenes-subidas/');
+		next(null, './../../public/upload/');
 	},
 
 	filename: function(req, file, next) {
@@ -55,12 +55,12 @@ const multerConf = {
 
 };
 
-module.exports.getAgregar = (req, res, cervezas, users) => {
+module.exports.getAgregar = (req, res, cervezas, usuarios) => {
 
 	res.render('agregar', {
 		titulo : 'Agrega una nueva cerveza',
 		cervezas,
-		users
+		usuarios
 	});
 
 };
@@ -68,7 +68,7 @@ module.exports.getAgregar = (req, res, cervezas, users) => {
 module.exports.postAgregar = (req,res) => {
 	
 	const nuevaCerveza = new Cervezas({
-		title:req.body.title,
+		titulo:req.body.titulo,
 		descripcion:req.body.descripcion,
 		imagen:req.file.filename,
 		comentarios:req.body.comentarios,
@@ -81,10 +81,9 @@ module.exports.postAgregar = (req,res) => {
 
 };
 
-
 module.exports.getCervezasParaUsuarios  = (usuarioIds) => {
      return Cervezas
           .find({usuario: {$in: usuarioIds}})
           .sort({createdAt: -1 })
-          .populate('users');
+          .populate('usuarios');
 };

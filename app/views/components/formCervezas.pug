@@ -4,8 +4,11 @@ block content
       form(action='/agregar' role='form' method='post', enctype='multipart/form-data')
         br
         .input-field
-          input(type='text', name='title', class='form-control')
-          label Nombre de la Cerveza      
+          input(type='text', name='titulo', class='form-control')
+          label Nombre de la Cerveza    
+        .input-field
+          input(type='text', name='descripcion', class='form-control')
+          label Agrega una descripción  
        
         div.file-field
           div.btn.yellow.darken-2.button.boton-adjuntar

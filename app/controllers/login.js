@@ -1,12 +1,15 @@
-const   express   = require('express');
-const       session   = require('express-session');
-const    MongoStore   = require('connect-mongo')(session);
-const      mongoose   = require('mongoose');
-const      passport   = require('passport');
-const        router   = express.Router();
-const        Usuario   = require('../models/Usuarios');
-const  LocalStrategy   = require('passport-local').Strategy;
-const           cors   = require('cors');
+//Liberías
+const express   = require('express');
+const session   = require('express-session');
+const MongoStore  = require('connect-mongo')(session);
+const mongoose = require('mongoose');
+const passport = require('passport');
+const router   = express.Router();
+const LocalStrategy  = require('passport-local').Strategy;
+const cors   = require('cors');
+
+//Archivos
+const Usuario = require('../models/Usuarios');
 
 module.exports = function (app) {
   app.use('/', router);

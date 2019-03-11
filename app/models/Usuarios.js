@@ -9,8 +9,8 @@ const Usuarios = new Schema({
   username: {type: String},
   password: {type: String},
   biografia: {type: String},
-  siguiendo: [{type: Schema.Types.ObjectId, ref:'user'}],
-  seguidores: [{type: Schema.Types.ObjectId, ref:'user'}],
+  siguiendo: [{type: Schema.Types.ObjectId, ref:'usuarios'}],
+  seguidores: [{type: Schema.Types.ObjectId, ref:'usuarios'}],
 
 }, { timestamps: true } )
 
