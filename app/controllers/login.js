@@ -1,15 +1,12 @@
-//Liberías
-const express   = require('express');
-const session   = require('express-session');
-const MongoStore  = require('connect-mongo')(session);
-const mongoose = require('mongoose');
-const passport = require('passport');
-const router   = express.Router();
-const LocalStrategy  = require('passport-local').Strategy;
-const cors   = require('cors');
-
-//Archivos
-const Usuario = require('../models/Usuarios');
+const   express   = require('express'),
+        session   = require('express-session'),
+     MongoStore   = require('connect-mongo')(session),
+       mongoose   = require('mongoose'),
+       passport   = require('passport'),
+         router   = express.Router(),
+        Usuario   = mongoose.model('users'),
+  LocalStrategy   = require('passport-local').Strategy,
+           cors   = require('cors');
 
 module.exports = function (app) {
   app.use('/', router);

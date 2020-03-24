@@ -2,12 +2,25 @@ extends layout
 
 block content
      .row
-          if cervezas
-               each cerveza in cervezas
-                    br
-                    .row
-                         .imagen-cerveza.col.l5.left
-                              img(src=`/upload/${cerveza.imagen}` class="imagen responsive-img")
-                         .content-cerveza.col.l7
-                              h2.title.left #{cerveza.title}
+          .container
+               if cervezas
+                    each cerveza in cervezas
+                         .row
+                              .col.l5
+                                   a(href=`/lugar/${cerveza._id}`)
+                                   br
+                                   img(src=`/upload/${cerveza.imagen}` class="imagen responsive-img")
+                              .col.l6
+                                   h2.title.left.cerveza-title #{cerveza.title}
+                                   p.col.l12 #{cerveza.comentarios}
+
+                                   form(method='post' class="form-comentario")
+                                     .input-field
+                                        input(type='text', name='title', placeholder='Escribe un comentario')
+                                        br
+                                        br
+                                        button(type='submit' class="btn right blue-grey") Comentar
+                                           
+
+
 

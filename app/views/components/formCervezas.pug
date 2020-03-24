@@ -1,15 +1,14 @@
 block content
  .container
     
-      form(action="/agregar" role='form' method='post', enctype='multipart/form-data')
+      form(action='/agregar' role='form' method='post', enctype='multipart/form-data')
         br
         .input-field
-          input(type='text', name='titulo', class='form-control')
-          label Nombre de la Cerveza    
+          input(type='text', name='title', class='form-control')
+          label Nombre de la Cerveza      
         .input-field
-          input(type='text', name='descripcion', class='form-control')
-          label Agrega una descripción  
-       
+          textarea(name='comentarios', cols='30', rows='10' class='form-control materialize-textarea')
+          label Escribe un comentario sobre tu cerveza 
         div.file-field
           div.btn.yellow.darken-2.button.boton-adjuntar
             span

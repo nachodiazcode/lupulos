@@ -1,17 +1,9 @@
-
-
-//Librerías
-
 const express  = require('express');
 const mongoose = require('mongoose');
+const Cervezas  = require('../models/cervezas');
+const Usuario   =  require('../models/user');
 const crypto = require('crypto');
 const router  = express.Router();
-
-//modelos 
-const Cervezas  = require('../models/Cervezas');
-const Usuario   =  require('../models/Usuarios');
-
-//controladores
 const controladorCervezas = require('./agregar');
 const controladorInicio = require('./inicio');
 

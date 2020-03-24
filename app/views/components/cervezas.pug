@@ -6,10 +6,10 @@
 
           .card.grey.darken-4.beer-cards.col.s12.m4.l4
             br
-            h5(class="comment-text") #{cerveza.titulo}
+            h5(class="comment-text") #{cerveza.title}
             a(href=`/cerveza/${cerveza._id}`)        
               img(src=`/upload/${cerveza.imagen}` class="imagen card-image")
-            p(class="comment-text") #{cerveza.descripcion}
+            p(class="comment-text") #{cerveza.comentarios}
 
 //manejo de errores
 if cervezas.length <=0

@@ -1,13 +1,12 @@
-//Liberías
 const   express = require('express');
 const   session = require('express-session');
 const    router = express.Router();
-//Archivos
-const   Usuario = require('../models/Usuarios');
+const   Usuario = require('../models/user');
 
 module.exports = function (app) {
     app.use('/', router);
 };
+
 
 module.exports.getExplorar = (req, res) => {
 
@@ -24,4 +23,3 @@ module.exports.postExplorar = (req, res ) => {
                res.render('explorar', {users}) ;
           })
 }
-

@@ -1,4 +1,3 @@
-//Archivos
 const   express = require('express');
 const   session = require('express-session');
 const  mongoose = require('mongoose');
@@ -10,8 +9,9 @@ module.exports = function (app) {
 
 module.exports.getIndex = (req, res, next)=>{
 
-  res.render('/',{
-    tituloPrincipal : "¡Bienvenido a Lupulos!"
-  });
+    res.render('/',{
+      tituloPrincipal : "¡Bienvenido a Lupulos!"
+    });
 
 };
+

@@ -1,22 +1,17 @@
-
 $(document).ready(function(){
-      $('.dropdown-button').dropdown({
+    $('.sidenav').sidenav();
+    $('.fixed-action-btn').floatingActionButton();
+
+    $('.dropdown-button').dropdown({
         inDuration: 300,
         outDuration:255,
         constrainWidth: false,
         hover: true ,
-        coverTrigger: true ,
         gutter: 0,
-        belowOrigin: false,
+        belowOrigin: true,
         alignment: 'left',
         stopPropagation: false
     });
-      
-  
-    $('.sidenav').sidenav();
-    $('.fixed-action-btn').floatingActionButton();
-
-    
 
 });
  
