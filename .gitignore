@@ -1,5 +1,5 @@
 .vscode/
 .DS_store/
-/package-lock.json
+/node_module
 package.json
-gulpfile.js
+package-lock.json
