@@ -3,13 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "npm start"
+    "start": "npm start" 
   },
   "engines": {
-    "node":"12.16.1"
+    "node": "12.16.1"
   },
   "dependencies": {
-    "bcrypt": "^2.0.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "compression": "^1.5.2",
