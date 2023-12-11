@@ -15,7 +15,7 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(mongo_url, { useMongoClient:true})
+mongoose.connect('', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Conexión exitosa');
     // Código adicional aquí

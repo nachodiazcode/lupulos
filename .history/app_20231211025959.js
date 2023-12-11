@@ -15,7 +15,7 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(mongo_url, { useMongoClient:true})
+mongoose.connect('mongodb://localhost:27017/lupulos', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Conexión exitosa');
     // Código adicional aquí
@@ -34,6 +34,15 @@ models.forEach( (model) => {
   require(model);
 });
 
+app.use(session({
+  secret:'ESTO ES SECRETO',
+  resave:true,
+  saveUninitialized: true,
+  store: new MongoStore({
+      url: mongo_url,
+      autoReconnect: true
+  })
+}))
 
 app.use(passport.initialize());
 app.use(passport.session());

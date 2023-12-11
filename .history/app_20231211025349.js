@@ -15,25 +15,37 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(mongo_url, { useMongoClient:true})
-  .then(() => {
-    console.log('Conexión exitosa');
-    // Código adicional aquí
-  })
-  .catch(error => {
-    console.error('Error de conexión:', error.message);
-  });
 
 
 
+mongoose.connection.on('error', (err) => {
 
+  throw err ;
+  process.exit(1);
 
+})
+
+mongoose.connect(config.db);
+
+let db = mongoose.connection;
+db.on('error', () => {
+  throw new Error('unable to connect to database at ' + config.db);
+});
 
 let models = glob.sync(config.root + '/app/models/*.js');
 models.forEach( (model) => {
   require(model);
 });
 
+app.use(session({
+  secret:'ESTO ES SECRETO',
+  resave:true,
+  saveUninitialized: true,
+  store: new MongoStore({
+      url: mongo_url,
+      autoReconnect: true
+  })
+}))
 
 app.use(passport.initialize());
 app.use(passport.session());

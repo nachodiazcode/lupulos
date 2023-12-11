@@ -15,7 +15,7 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(mongo_url, { useMongoClient:true})
+mongoose.connect('mongodb://localhost:27017/lupulos', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Conexión exitosa');
     // Código adicional aquí
@@ -33,6 +33,7 @@ let models = glob.sync(config.root + '/app/models/*.js');
 models.forEach( (model) => {
   require(model);
 });
+
 
 
 app.use(passport.initialize());
