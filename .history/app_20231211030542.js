@@ -25,6 +25,15 @@ mongoose.connect(mongo_url, {useMongoClient: true})
 
 
 
+mongoose.connection.on('error', (err) => {
+
+  throw err ;
+  process.exit(1);
+
+})
+
+mongoose.connect(config.db);
+
 let db = mongoose.connection;
 db.on('error', () => {
   throw new Error('unable to connect to database at ' + config.db);

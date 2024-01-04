@@ -14,7 +14,7 @@ const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(mongo_url, {useMongoClient: true})
+mongoose.connect(mongo_url, {})
   .then(() => {
     console.log('Conexión exitosa');
     // Código adicional aquí
@@ -24,6 +24,15 @@ mongoose.connect(mongo_url, {useMongoClient: true})
   });
 
 
+
+mongoose.connection.on('error', (err) => {
+
+  throw err ;
+  process.exit(1);
+
+})
+
+mongoose.connect(config.db);
 
 let db = mongoose.connection;
 db.on('error', () => {

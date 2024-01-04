@@ -25,6 +25,8 @@ mongoose.connect(mongo_url, {useMongoClient: true})
 
 
 
+mongoose.connect(config.db);
+
 let db = mongoose.connection;
 db.on('error', () => {
   throw new Error('unable to connect to database at ' + config.db);
