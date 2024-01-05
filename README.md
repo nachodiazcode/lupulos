@@ -14,14 +14,14 @@ Lupulos App es una aplicación dedicada a los amantes de las cervezas artesanale
 
 lupulos-app/
 
-├── config/              # Archivos de configuración
-├── public/              # Archivos públicos (front-end)
-├── README.md            # Documentación del proyecto
-├── app.js               # Archivo principal de la aplicación
-├── favicon.ico          # Ícono de la aplicación
-├── gulpfile.js          # Archivo de configuración de Gulp
-├── package-lock.json    # Detalles específicos de las dependencias
-└── package.json         # Archivo de configuración de npm
+├── config/ # Archivos de configuración
+├── public/ # Archivos públicos (front-end)
+├── README.md # Documentación del proyecto
+├── app.js # Archivo principal de la aplicación
+├── favicon.ico # Ícono de la aplicación
+├── gulpfile.js # Archivo de configuración de Gulp
+├── package-lock.json # Detalles específicos de las dependencias
+└── package.json # Archivo de configuración de npm
 
 ## Uso
 Para ejecutar la aplicación localmente:
