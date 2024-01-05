@@ -1,6 +1,7 @@
-const           express  = require('express');
+const path = require('path');
+const express = require('express');
 const           session  = require('express-session');
-const        MongoStore  = require('connect-mongo')(session);
+const        MongoStore  = require('connect-mongo');
 const            config  = require('./config/config');
 const              glob  = require('glob');
 const          mongoose  = require('mongoose');
@@ -13,17 +14,17 @@ const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
 //Conectando a express
 const app = express();
 
-mongoose.Promise = global.Promise;
-mongoose.connect(mongo_url, {useMongoClient: true})
+
+mongoose.connect(mongo_url)
   .then(() => {
     console.log('Conexión exitosa');
-    // Código adicional aquí
+    // Additional code here
   })
   .catch(error => {
     console.error('Error de conexión:', error.message);
   });
 
-
+  mongoose.set('strictQuery', false);
 
 let db = mongoose.connection;
 db.on('error', () => {
@@ -36,20 +37,21 @@ models.forEach( (model) => {
 });
 
 app.use(session({
-  secret:'ESTO ES SECRETO',
-  resave:true,
+  secret: 'ESTO ES SECRETO',
+  resave: true,
   saveUninitialized: true,
-  store: new MongoStore({
-      url: mongo_url,
-      autoReconnect: true
+  store: MongoStore.create({
+    mongoUrl: mongo_url, // Asegúrate de proporcionar la URL correcta a MongoDB
+    ttl: 14 * 24 * 60 * 60, // tiempo de vida opcional de la sesión en segundos
+    autoRemove: 'native' // opción para limpieza automática de sesiones caducadas
   })
-}))
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
 //bodyParser nos ayuda a traernos una información y transformarla a JSON
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req,res,next)=>{
   res.locals.user = req.user  ;
@@ -68,22 +70,25 @@ const storage = multer.diskStorage({
 
 });
 
+app.set('views', path.join(__dirname, 'app', 'views'));
+app.set('view engine', 'pug');
+
 const upload = multer ({ storage : storage }) ;
 
 // ****** RUTAS ********** //
 
 const controladorUsuario =  require('./app/controllers/user');
 
-app.get('/signup', controladorUsuario.postSignUp);
-app.get('/login', controladorUsuario.postLogin);
-app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
+app.get('signup', controladorUsuario.postSignUp);
+app.get('login', controladorUsuario.postLogin);
+app.get('logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
 
 //Agragamos las cervezas !!!!!
 const controladorAgregar = require('./app/controllers/agregar');
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
 const controladorIndex =  require('./app/controllers/index');
-app.get('/index',  controladorIndex.getIndex);
+app.get('index',  controladorIndex.getIndex);
 
 //ControladorInicio
 const controladorInicio =  require('./app/controllers/inicio');
@@ -113,11 +118,11 @@ app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseg
 //ControladorExplorar : Donde explorar a los distintos usuarios
 const controladorExplorar=  require('./app/controllers/explorar');
 app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar);
-app.post('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.postExplorar);
+app.post('/explorar', PassportConfig.estaAutenticado, controladorExplorar.postExplorar);
 
 require('./config/express')(app, config);
 
 let server = app.listen(config.port, () => {
-  console.log('Express server listening on port ' + config.port);
+  console.log('Express server listening on port ' + 8000);
 });
 

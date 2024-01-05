@@ -1,6 +1,6 @@
 const   express  = require('express'),
         session  = require('express-session'),
-     MongoStore  = require('connect-mongo')(session),
+     MongoStore  = require('connect-mongo'),
        mongoose  = require('mongoose'),
        passport  = require('passport'),
          router  = express.Router(),
