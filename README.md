@@ -13,10 +13,9 @@ Lupulos App es una aplicación dedicada a los amantes de las cervezas artesanale
 ## Estructura del Proyecto
 
 lupulos-app/
-│
+
 ├── config/              # Archivos de configuración
 ├── public/              # Archivos públicos (front-end)
-├── .gitignore           # Archivo .gitignore
 ├── README.md            # Documentación del proyecto
 ├── app.js               # Archivo principal de la aplicación
 ├── favicon.ico          # Ícono de la aplicación
