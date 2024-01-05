@@ -40,7 +40,7 @@ Para ejecutar la aplicación localmente:
 
 ## Contacto
 
-Para cualquier duda o comentario, contáctanos en [correo electrónico] o [redes sociales].
+nachodiazweb@gmail.com
 
 ---
 
