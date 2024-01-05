@@ -4,7 +4,7 @@ const   express   = require('express'),
        mongoose   = require('mongoose'),
        passport   = require('passport'),
          router   = express.Router(),
-        Usuario   = mongoose.model('users'),
+        Usuario   = mongoose.model('User'),
   LocalStrategy   = require('passport-local').Strategy,
            cors   = require('cors');
 

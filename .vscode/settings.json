@@ -1,25 +1,25 @@
 {
     "jira-plugin.workingProject": "",
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#02882c",
-        "activityBar.background": "#02882c",
+        "activityBar.activeBackground": "#41c228",
+        "activityBar.background": "#41c228",
         "editorError.foreground": "#000000ff",
-        "editorGroup.border": "#02882c",
+        "editorGroup.border": "#41c228",
         "editorInfo.foreground": "#000000ff",
         "editorWarning.foreground": "#000000ff",
-        "panel.border": "#02882c",
-        "sash.hoverBorder": "#02882c",
-        "sideBar.border": "#02882c",
-        "statusBar.background": "#01561c",
-        "statusBar.border": "#01561c",
-        "statusBar.debuggingBackground": "#56013b",
-        "statusBar.debuggingBorder": "#56013b",
-        "statusBarItem.hoverBackground": "#02882c",
-        "statusBarItem.remoteBackground": "#01561c",
-        "tab.activeBorder": "#02882c",
-        "titleBar.activeBackground": "#01561c",
-        "titleBar.border": "#01561c",
-        "titleBar.inactiveBackground": "#01561c99"
+        "panel.border": "#41c228",
+        "sash.hoverBorder": "#41c228",
+        "sideBar.border": "#41c228",
+        "statusBar.background": "#33981f",
+        "statusBar.border": "#33981f",
+        "statusBar.debuggingBackground": "#841f98",
+        "statusBar.debuggingBorder": "#841f98",
+        "statusBarItem.hoverBackground": "#41c228",
+        "statusBarItem.remoteBackground": "#33981f",
+        "tab.activeBorder": "#41c228",
+        "titleBar.activeBackground": "#33981f",
+        "titleBar.border": "#33981f",
+        "titleBar.inactiveBackground": "#33981f99"
     },
-    "peacock.color": "#01561C"
+    "peacock.color": "#33981F"
 }

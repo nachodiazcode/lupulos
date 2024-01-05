@@ -3,65 +3,55 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
-const nuevoUsuario = new Schema({
+const userSchema = new Schema({
+  email: { type: String, lowercase: true },
+  username: { type: String },
+  password: { type: String },
+  biografia: { type: String },
+  siguiendo: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  seguidores: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+}, { timestamps: true });
 
-  email: {type: String, lowercase: true },
-  username: {type: String},
-  password: {type: String},
-  biografia: {type: String},
-  siguiendo: [{type: Schema.Types.ObjectId, ref:'user'}],
-  seguidores: [{type: Schema.Types.ObjectId, ref:'user'}],
+userSchema.pre('save', function (next) {
+  const usuario = this;
 
-}, { timestamps: true } )
+  // Si el usuario sigue a sí mismo, previene duplicados en siguiendo y seguidores
+  if (usuario.siguiendo.indexOf(usuario._id) === -1) {
+    usuario.siguiendo.push(usuario._id);
+    usuario.seguidores.push(usuario._id);
+  }
 
-  nuevoUsuario.pre('save', function ( next ){
+  if (!usuario.isModified('password')) {
+    return next();
+  }
 
-      const usuario = this ;
-      const usuarioId = usuario._id ;
+  bcrypt.genSalt(10, (err, salt) => {
+    if (err) {
+      return next(err);
+    }
 
-      if (usuario.siguiendo.indexOf (usuarioId) === -1 ){
-        usuario.siguiendo.push(usuarioId);
-        usuario.seguidores.push(usuarioId);
+    bcrypt.hash(usuario.password, salt, null, (err, hash) => {
+      if (err) {
+        return next(err);
       }
+      usuario.password = hash;
+      next();
+    });
+  });
+});
 
-      if( !usuario.isModified('password')) {
-          return next() ;
-      }
+userSchema.methods.compararPassword = function (password, cb) {
+  bcrypt.compare(password, this.password, (err, sonIguales) => {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, sonIguales);
+  });
+};
 
-      bcrypt.genSalt(10, (err, salt ) => {
+userSchema.methods.avatar = function (dimension = 55) {
+  const hash = crypto.createHash('md5').update(this.email.toLowerCase().trim()).digest('hex');
+  return `https://www.gravatar.com/avatar/${hash}?s=${dimension}&d=identicon`;
+};
 
-          if(err){
-              next(err);
-          }
-
-          bcrypt.hash(usuario.password, salt, null, ( err, hash ) => {
-
-              if(err){
-                  next(err);
-              }
-              usuario.password = hash ;
-              next();
-
-          })
-      })
-})
-
-nuevoUsuario.methods.compararPassword = function ( password, cb) {
-
-  bcrypt.compare(password, this.password, (err, sonIguales ) => {
-      if(err){
-          return cb(err);
-      }
-      cb(null, sonIguales);
-  })
-}
-
-nuevoUsuario.methods.avatar = function(dimension=55){
-    const md5 = crypto.createHash('md5').update(this.email).digest('hex') ;
-    return `https://api.adorable.io/avatars/${dimension}/${md5}` ;
-}
-
-
-module.exports = mongoose.model('users', nuevoUsuario) ;
-
-
+module.exports = mongoose.model('User', userSchema);

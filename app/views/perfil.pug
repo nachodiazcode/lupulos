@@ -2,12 +2,12 @@
 extends layout
 
 block content
-  
+  .row
+    .col.l12
+       h2.amber-text.text-lighten-2.left Bienvenido #{usuario.username}
   .row 
-
-      h2.amber-text.text-lighten-2.left Bienvenido #{usuario.username}
-  
       .col.s12.m6.offset-m2.l6
+      
         .card-panel.card-profile.grey.darken-4
           .row.valign-wrapper
             .col.s5.l10
@@ -19,11 +19,10 @@ block content
               span.amber-text.text-lighten-2 
                 | #{usuario.biografia}
               
-      .col.s12.m6.offset-.s6.m2.l6
+      .col.s12.m6.offset-.s6.m2.l4
         .card-panel.grey.darken-4.z-depth-1
-
           .row.valign-wrapper
-            .col.s4
+            .col.s3
               span.black-text.amber-text.text-lighten-2 
                 | Seguidores 
                 br

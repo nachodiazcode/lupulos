@@ -8,7 +8,7 @@ const   express = require('express'),
      bodyParser = require('body-parser'),
        passport = require('passport'),
          router = express.Router(),
-        Usuario = mongoose.model('users'),
+        Usuario = mongoose.model('User'),
   LocalStrategy = require('passport-local').Strategy,
           cors  = require('cors');
 

@@ -86,5 +86,5 @@ module.exports.getCervezasParaUsuarios  = (usuarioIds) => {
      return Cervezas
           .find({usuario: {$in: usuarioIds}})
           .sort({createdAt: -1 })
-          .populate('users');
+          .populate('User');
 }

@@ -14,7 +14,6 @@ const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
 //Conectando a express
 const app = express();
 
-
 mongoose.connect(mongo_url)
   .then(() => {
     console.log('Conexión exitosa');
@@ -79,16 +78,17 @@ const upload = multer ({ storage : storage }) ;
 
 const controladorUsuario =  require('./app/controllers/user');
 
-app.get('signup', controladorUsuario.postSignUp);
-app.get('login', controladorUsuario.postLogin);
-app.get('logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
+app.get('/signup', controladorUsuario.postSignUp);
+app.get('/login', controladorUsuario.postLogin);
+app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
+
 
 //Agragamos las cervezas !!!!!
 const controladorAgregar = require('./app/controllers/agregar');
 app.post('/agregar', upload.single('imagen') ,controladorAgregar.postAgregar);
 
 const controladorIndex =  require('./app/controllers/index');
-app.get('index',  controladorIndex.getIndex);
+app.get('/index',  controladorIndex.getIndex);
 
 //ControladorInicio
 const controladorInicio =  require('./app/controllers/inicio');
@@ -119,6 +119,20 @@ app.get('/unseguir/:id', PassportConfig.estaAutenticado, controladorPerfil.unseg
 const controladorExplorar=  require('./app/controllers/explorar');
 app.get('/explorar',  PassportConfig.estaAutenticado, controladorExplorar.getExplorar);
 app.post('/explorar', PassportConfig.estaAutenticado, controladorExplorar.postExplorar);
+
+const controladorBlog = require('./app/controllers/blog');
+app.get('/blog',  PassportConfig.estaAutenticado, controladorBlog.getBlog);
+
+const controladorPrensa = require('./app/controllers/prensa');
+app.get('/prensa', PassportConfig.estaAutenticado, controladorPrensa.getPrensa);
+
+const controladorPrivacidad = require('./app/controllers/privacidad');
+app.get('/privacidad',  PassportConfig.estaAutenticado, controladorPrivacidad.getPrivacidad);
+
+app.get('/logout', (req, res) => {
+  req.logout(); // Cierra la sesión del usuario
+  res.redirect('/'); // Redirige a la página principal o a donde desees después del logout
+});
 
 require('./config/express')(app, config);
 

@@ -3,13 +3,11 @@ const  session = require('express-session');
 const  Lugares = require('../models/lugares');
 const   router = express.Router();
 
-
 module.exports = function (app) {
     app.use('/', router);
 };
 
 module.exports.getLugares =  (req, res, next) => {
-
     Lugares.find((err,lugares)=>{
         res.render('lugares',{
            lugares,
