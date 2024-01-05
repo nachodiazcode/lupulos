@@ -7,7 +7,7 @@ const     passport   = require('passport');
 const       router   = express.Router();
 const      Usuario   = require('../models/user');
 
-const mongo_url = "mongodb://127.0.0.1:27017/lupulos";
+require('dotenv').config();
 
 module.exports = function (app) {
   app.use('/', router);
@@ -16,23 +16,20 @@ module.exports = function (app) {
 const app = express();
 
 app.use(session({
-  secret: 'ESTO ES SECRETO',
+  secret: process.env.JWT,
   resave: true,
   saveUninitialized: true,
   store: MongoStore.create({
-    mongoUrl: mongo_url, // Asegúrate de proporcionar la URL correcta a MongoDB
+    mongoUrl: process.env.URI_DB, // Asegúrate de proporcionar la URL correcta a MongoDB
     ttl: 14 * 24 * 60 * 60, // tiempo de vida opcional de la sesión en segundos
     autoRemove: 'native' // opción para limpieza automática de sesiones caducadas
   })
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
-router.get('/signup', function(req, res, next){
-
-})
 
 router.post('/signup', function(req, res, next){
 

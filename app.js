@@ -1,5 +1,5 @@
-const path = require('path');
-const express = require('express');
+const               path = require('path');
+const            express = require('express');
 const           session  = require('express-session');
 const        MongoStore  = require('connect-mongo');
 const            config  = require('./config/config');
@@ -8,13 +8,14 @@ const          mongoose  = require('mongoose');
 const        bodyParser  = require('body-parser');
 const    PassportConfig  = require('./config/passport');
 const          passport  = require('passport');
-const            multer  = require('multer');
-//MongoDB
-const         mongo_url  = "mongodb://127.0.0.1:27017/lupulos";
+const multer = require('multer');
+
+require('dotenv').config();
+
 //Conectando a express
 const app = express();
 
-mongoose.connect(mongo_url)
+mongoose.connect(process.env.URI_DB)
   .then(() => {
     console.log('Conexión exitosa');
     // Additional code here
@@ -36,13 +37,13 @@ models.forEach( (model) => {
 });
 
 app.use(session({
-  secret: 'ESTO ES SECRETO',
+  secret: process.env.JWT,
   resave: true,
   saveUninitialized: true,
   store: MongoStore.create({
-    mongoUrl: mongo_url, // Asegúrate de proporcionar la URL correcta a MongoDB
-    ttl: 14 * 24 * 60 * 60, // tiempo de vida opcional de la sesión en segundos
-    autoRemove: 'native' // opción para limpieza automática de sesiones caducadas
+    mongoUrl: process.env.URI_DB, 
+    ttl: 14 * 24 * 60 * 60, 
+    autoRemove: 'native' 
   })
 }));
 
@@ -76,12 +77,12 @@ const upload = multer ({ storage : storage }) ;
 
 // ****** RUTAS ********** //
 
-const controladorUsuario =  require('./app/controllers/user');
+// Requerir las rutas
 
-app.get('/signup', controladorUsuario.postSignUp);
-app.get('/login', controladorUsuario.postLogin);
-app.get('/logout', PassportConfig.estaAutenticado, controladorUsuario.logout);
+const authRoutes = require('./app/routes/auth/authRoutes');
 
+// Usar las rutas
+app.use('/auth', authRoutes);
 
 //Agragamos las cervezas !!!!!
 const controladorAgregar = require('./app/controllers/agregar');
@@ -136,7 +137,6 @@ app.get('/logout', (req, res) => {
 
 require('./config/express')(app, config);
 
-let server = app.listen(config.port, () => {
-  console.log('Express server listening on port ' + 8000);
-});
+console.log('Express server listening on port' + ' ' + (process.env.PORT || 3000 ));
+
 

@@ -49,14 +49,8 @@ module.exports.postSignUp = (req, res, next) => {
   });
 };
 
-module.exports.postLogin = (req, res, next) => {
-  // La lógica de autenticación con Passport aquí
-};
 
 module.exports.logout = (req, res) => {
-  // Lógica para el logout
+  req.logout(); // Cierra la sesión del usuario
+  res.redirect('/'); // Redirige a la página principal o a donde desees después del logout
 };
-
-router.get('/user', (req, res, next) => {
-  // Lógica para obtener usuarios
-});

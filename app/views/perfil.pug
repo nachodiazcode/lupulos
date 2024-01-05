@@ -53,24 +53,11 @@ block content
     if cervezas 
       each cerveza in cervezas 
 
-            .card.col.s12.m12.l4.grey.darken-3
-              i.material-icons.right more_vert
-              .card-image.waves-effect.waves-block.waves-ligh
-                a(herf=`/cerveza/${cerveza._id}`)
-                  img(src=`/upload/${cerveza.imagen}` class="img-responsive image-feed ")
-              .card-content
-                  h5.amber-text.text-lighten-2.title-card Has a subido la cerveza  #{cerveza.title}
-                  p(class="comments") #{cerveza.comentarios}
-                    
-               
-                 
-                
-                
-               
- 
-
-      
-
-
-      
-
+        .card.col.s12.m12.l4.grey.darken-3
+          i.material-icons.right more_vert
+            .card-image.waves-effect.waves-block.waves-ligh
+              a(herf=`/cerveza/${cerveza._id}`)
+                img(src=`/upload/${cerveza.imagen}` class="img-responsive image-feed ")
+            .card-content
+              h5.amber-text.text-lighten-2.title-card Has a subido la cerveza  #{cerveza.title}
+                p(class="comments") #{cerveza.comentarios}
